@@ -1,0 +1,2 @@
+description: This BBE demonstrates how to use the Azure OpenAI embedding provider to generate text embeddings and compute semantic similarity.
+keywords: ballerina, ballerina by example, BBE, ai, llm, azure, openai, azure openai, embedding, vector, semantic similarity, model-provider

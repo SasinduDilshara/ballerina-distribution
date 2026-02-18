@@ -1,0 +1,2 @@
+description: This BBE demonstrates RAG semantic retrieval from Azure AI Search using Azure OpenAI embeddings and chat for answer generation.
+keywords: ballerina, ballerina by example, BBE, ai, rag, azure, azure ai search, azure openai, retrieval, vector search, semantic search

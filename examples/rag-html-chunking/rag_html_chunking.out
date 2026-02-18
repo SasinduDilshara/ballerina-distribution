@@ -1,0 +1,5 @@
+$ bal run rag_html_chunking.bal
+Ingestion with HTML chunking successful
+
+Query: Can employees carry forward unused annual leave days?
+Answer: Yes, employees can carry forward up to 5 unused annual leave days to the next calendar year.

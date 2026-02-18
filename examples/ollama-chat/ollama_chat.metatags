@@ -1,0 +1,2 @@
+description: This BBE demonstrates how to use the Ollama model provider with the Chat API for local, privacy-preserving multi-turn conversations.
+keywords: ballerina, ballerina by example, BBE, ai, llm, ollama, local llm, chat, model-provider, offline, privacy

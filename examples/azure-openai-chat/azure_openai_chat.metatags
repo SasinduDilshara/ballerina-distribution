@@ -1,0 +1,2 @@
+description: This BBE demonstrates how to use the Azure OpenAI model provider with the Chat API for multi-turn conversations.
+keywords: ballerina, ballerina by example, BBE, ai, llm, azure, openai, azure openai, chat, model-provider

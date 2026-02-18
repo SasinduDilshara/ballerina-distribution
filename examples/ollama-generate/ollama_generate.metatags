@@ -1,0 +1,2 @@
+description: This BBE demonstrates how to use the Ollama model provider with the Generate API for local, privacy-preserving structured output.
+keywords: ballerina, ballerina by example, BBE, ai, llm, ollama, local llm, generate, structured output, model-provider, offline, privacy

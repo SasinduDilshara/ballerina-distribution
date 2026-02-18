@@ -1,0 +1,2 @@
+description: This BBE demonstrates AI agent memory using in-memory ShortTermMemory with model-assisted overflow handling for multi-turn conversations.
+keywords: ballerina, ballerina by example, BBE, ai, agent, memory, short term memory, in-memory, conversation history, session

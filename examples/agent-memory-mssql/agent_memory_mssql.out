@@ -1,0 +1,4 @@
+$ bal run agent_memory_mssql.bal
+Agent: Hi Sarah! I'm sorry to hear you're having trouble with the installation on Windows 11. Let's get this sorted out. Could you tell me which version of the app you downloaded, and do you see any error message when the crash occurs?
+Agent: Thanks for trying that, Sarah. Since reinstalling hasn't helped, the crash on startup is likely caused by a compatibility issue, a corrupted user profile, or a missing dependency. Let's check the crash logs next — they'll tell us exactly what's going wrong.
+Agent: On Windows 11, the crash logs for our app are located at `%AppData%\YourApp\Logs\`. You can open this folder by pressing `Win + R`, typing `%AppData%\YourApp\Logs`, and pressing Enter. Look for files with today's date and share the contents of the most recent `.log` file with us.

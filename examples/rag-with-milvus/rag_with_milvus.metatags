@@ -1,0 +1,2 @@
+description: This BBE demonstrates a complete RAG workflow using Milvus as the vector database for document ingestion and semantic retrieval.
+keywords: ballerina, ballerina by example, BBE, ai, rag, milvus, vector database, vector store, embeddings, retrieval-augmented generation

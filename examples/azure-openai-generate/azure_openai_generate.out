@@ -1,0 +1,5 @@
+$ bal run azure_openai_generate.bal
+Quality Score: 8/10
+Sentiment: positive
+Key Topics: ["query expressions","SQL-like syntax","data processing","Ballerina language","lists and tables"]
+Flagged: false

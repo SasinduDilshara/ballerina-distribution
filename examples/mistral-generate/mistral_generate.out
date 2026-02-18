@@ -1,0 +1,6 @@
+$ bal run mistral_generate.bal
+Quality Score: 3/10
+Complexity: low
+Follows Naming Conventions: false
+Issues: ["magic numbers (0.15, 0.25, 2, 1) with no explanation","missing semicolons","no JSDoc or inline comments","ambiguous parameter names (x, y, z)","unclear function purpose from name alone","no error handling or input validation"]
+Top Recommendation: Replace magic numbers with named constants (e.g., BASE_RATE, MULTIPLIER) and rename parameters and the function to reflect their actual purpose.

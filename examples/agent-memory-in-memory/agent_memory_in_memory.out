@@ -1,0 +1,8 @@
+$ bal run agent_memory_in_memory.bal
+Agent: I've added "Buy groceries" to your task list, due tomorrow. Let me know if you have any other tasks!
+Agent: Done! I've added "Pay electricity bill" to your task list, due next Friday. You now have two tasks. Anything else?
+Agent: You currently have 2 tasks:
+1. Buy groceries — due tomorrow
+2. Pay electricity bill — due next Friday
+
+Let me know if you'd like to add, update, or complete any of them!

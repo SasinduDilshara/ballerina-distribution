@@ -1,0 +1,2 @@
+description: This BBE demonstrates RAG document ingestion into Azure AI Search using Azure OpenAI embeddings.
+keywords: ballerina, ballerina by example, BBE, ai, rag, azure, azure ai search, azure openai, embeddings, ingestion, vector search

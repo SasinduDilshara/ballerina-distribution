@@ -1,0 +1,4 @@
+$ bal run openai_generate.bal
+Title: Ballerina: The Cloud-Native Language Built for Integration
+Tags: ["ballerina","cloud-native","microservices","integration","api"]
+Summary: Ballerina is a cloud-native programming language that treats network interactions as first-class citizens, offering built-in support for HTTP, gRPC, and WebSockets alongside a visual diagram representation to simplify building microservices and APIs.

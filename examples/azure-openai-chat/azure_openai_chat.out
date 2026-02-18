@@ -1,0 +1,3 @@
+$ bal run azure_openai_chat.bal
+HR Assistant: Full-time employees are typically entitled to 21 days of paid annual leave per year, which accrues at 1.75 days per month. Please check your employment contract or the company leave policy for your specific entitlement.
+HR Assistant: Yes, you can carry forward up to 5 unused annual leave days to the next calendar year. Any remaining unused days beyond that limit will be forfeited unless you request encashment before year-end. Please submit any carry-forward requests through the HR portal before December 31st.

@@ -1,0 +1,12 @@
+$ bal run ollama_chat.bal
+Assistant: Subject: Meeting Rescheduled to Tuesday
+
+Hi Team,
+
+I hope you're all doing well! I wanted to give you a heads-up that our Friday meeting has been rescheduled to Tuesday at the same time. I apologize for any inconvenience this may cause — your calendars should reflect the updated invite shortly.
+
+Looking forward to connecting then!
+
+Best,
+[Your Name]
+Assistant: Hi Team, our Friday meeting has been moved to Tuesday at the same time — please update your calendars accordingly. Apologies for any inconvenience!

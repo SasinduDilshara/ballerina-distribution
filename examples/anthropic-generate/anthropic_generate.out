@@ -1,0 +1,5 @@
+$ bal run anthropic_generate.bal
+Sentiment: mixed
+Confidence: 0.82
+Dominant Emotion: satisfaction
+Key Phrases: ["intuitive interface","excellent collaboration features","saves a lot of time","mobile app is quite slow","crashes occasionally"]

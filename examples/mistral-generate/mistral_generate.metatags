@@ -1,0 +1,2 @@
+description: This BBE demonstrates how to use the Mistral model provider with the Generate API for structured, type-safe LLM responses.
+keywords: ballerina, ballerina by example, BBE, ai, llm, mistral, generate, structured output, model-provider, code analysis

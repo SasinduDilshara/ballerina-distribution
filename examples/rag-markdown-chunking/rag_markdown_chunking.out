@@ -1,0 +1,5 @@
+$ bal run rag_markdown_chunking.bal
+Ingestion with Markdown chunking successful
+
+Query: What is the procedure for requesting leave?
+Answer: To request leave, submit your request via the HR portal or by email. Include the type of leave, the requested dates, and the reason (if required). Your manager will review and approve or reject the request within 2 business days, and HR will update your leave records accordingly. For annual leave, a minimum of 3 days' notice is required.

@@ -1,0 +1,5 @@
+$ bal run azure_openai_embedding.bal
+  "How to dispute a billing error or incorrect charge": 0.8721403479576111
+  "How to update your payment method": 0.4312105178833008
+  "How to download your invoice as a PDF": 0.5103244781494141
+Best matching FAQ: "How to dispute a billing error or incorrect charge"

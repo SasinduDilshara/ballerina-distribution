@@ -1,0 +1,5 @@
+$ bal run rag_with_weaviate.bal
+Ingestion into Weaviate successful
+
+Query: How many days of maternity leave is an employee entitled to?
+Answer: Employees are entitled to up to 26 weeks of maternity leave as per applicable law. At least 8 weeks' advance notice is required before the leave begins.

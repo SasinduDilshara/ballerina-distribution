@@ -1,0 +1,5 @@
+$ bal run mcp_client.bal
+MCP client initialized successfully
+Available tools (2):
+  - getCurrentWeather: Get current weather for a city.
+  - getWeatherForecast: Get weather forecast for upcoming days.

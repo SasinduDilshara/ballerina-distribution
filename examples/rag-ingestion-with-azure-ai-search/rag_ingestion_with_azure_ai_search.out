@@ -1,0 +1,3 @@
+$ bal run rag_ingestion_with_azure_ai_search.bal
+Ingestion into Azure AI Search successful
+Index: leave-policy-index

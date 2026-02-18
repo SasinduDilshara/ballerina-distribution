@@ -5121,6 +5121,291 @@
     ]
   },
   {
+    "title": "OpenAI model provider",
+    "column": 0,
+    "category": "Generative AI",
+    "samples": [
+      {
+        "name": "OpenAI chat",
+        "url": "openai-chat",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the output is not fixed",
+        "disablePlayground": true
+      },
+      {
+        "name": "OpenAI structured output",
+        "url": "openai-generate",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the output is not fixed",
+        "disablePlayground": true
+      },
+      {
+        "name": "OpenAI embeddings",
+        "url": "openai-embedding",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the output is not fixed",
+        "disablePlayground": true
+      }
+    ]
+  },
+  {
+    "title": "Azure OpenAI model provider",
+    "column": 0,
+    "category": "Generative AI",
+    "samples": [
+      {
+        "name": "Azure OpenAI chat",
+        "url": "azure-openai-chat",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the output is not fixed",
+        "disablePlayground": true
+      },
+      {
+        "name": "Azure OpenAI structured output",
+        "url": "azure-openai-generate",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the output is not fixed",
+        "disablePlayground": true
+      },
+      {
+        "name": "Azure OpenAI embeddings",
+        "url": "azure-openai-embedding",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the output is not fixed",
+        "disablePlayground": true
+      }
+    ]
+  },
+  {
+    "title": "Anthropic model provider",
+    "column": 0,
+    "category": "Generative AI",
+    "samples": [
+      {
+        "name": "Anthropic chat",
+        "url": "anthropic-chat",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the output is not fixed",
+        "disablePlayground": true
+      },
+      {
+        "name": "Anthropic structured output",
+        "url": "anthropic-generate",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the output is not fixed",
+        "disablePlayground": true
+      }
+    ]
+  },
+  {
+    "title": "Mistral model provider",
+    "column": 0,
+    "category": "Generative AI",
+    "samples": [
+      {
+        "name": "Mistral chat",
+        "url": "mistral-chat",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the output is not fixed",
+        "disablePlayground": true
+      },
+      {
+        "name": "Mistral structured output",
+        "url": "mistral-generate",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the output is not fixed",
+        "disablePlayground": true
+      }
+    ]
+  },
+  {
+    "title": "Ollama model provider",
+    "column": 0,
+    "category": "Generative AI",
+    "samples": [
+      {
+        "name": "Ollama chat",
+        "url": "ollama-chat",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires a locally running Ollama instance and the output is not fixed",
+        "disablePlayground": true
+      },
+      {
+        "name": "Ollama structured output",
+        "url": "ollama-generate",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires a locally running Ollama instance and the output is not fixed",
+        "disablePlayground": true
+      }
+    ]
+  },
+  {
+    "title": "DeepSeek model provider",
+    "column": 0,
+    "category": "Generative AI",
+    "samples": [
+      {
+        "name": "DeepSeek chat",
+        "url": "deepseek-chat",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the output is not fixed",
+        "disablePlayground": true
+      },
+      {
+        "name": "DeepSeek structured output",
+        "url": "deepseek-generate",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the output is not fixed",
+        "disablePlayground": true
+      }
+    ]
+  },
+  {
+    "title": "RAG chunking strategies",
+    "column": 1,
+    "category": "Generative AI",
+    "samples": [
+      {
+        "name": "RAG text chunking",
+        "url": "rag-text-chunking",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the output is not fixed",
+        "disablePlayground": true
+      },
+      {
+        "name": "RAG markdown chunking",
+        "url": "rag-markdown-chunking",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the output is not fixed",
+        "disablePlayground": true
+      },
+      {
+        "name": "RAG HTML chunking",
+        "url": "rag-html-chunking",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the output is not fixed",
+        "disablePlayground": true
+      }
+    ]
+  },
+  {
+    "title": "RAG with vector databases",
+    "column": 1,
+    "category": "Generative AI",
+    "samples": [
+      {
+        "name": "RAG with Weaviate",
+        "url": "rag-with-weaviate",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the output is not fixed",
+        "disablePlayground": true
+      },
+      {
+        "name": "RAG with Milvus",
+        "url": "rag-with-milvus",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the output is not fixed",
+        "disablePlayground": true
+      },
+      {
+        "name": "RAG with pgvector",
+        "url": "rag-with-pgvector",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the output is not fixed",
+        "disablePlayground": true
+      }
+    ]
+  },
+  {
+    "title": "RAG with Azure AI Search",
+    "column": 1,
+    "category": "Generative AI",
+    "samples": [
+      {
+        "name": "RAG ingestion with Azure AI Search",
+        "url": "rag-ingestion-with-azure-ai-search",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys",
+        "disablePlayground": true
+      },
+      {
+        "name": "RAG query with Azure AI Search",
+        "url": "rag-query-with-azure-ai-search",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the output is not fixed",
+        "disablePlayground": true
+      }
+    ]
+  },
+  {
+    "title": "MCP client",
+    "column": 1,
+    "category": "Generative AI",
+    "samples": [
+      {
+        "name": "MCP client",
+        "url": "mcp-client",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires a running MCP server",
+        "disablePlayground": true
+      },
+      {
+        "name": "MCP client tool call",
+        "url": "mcp-client-tool-call",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires a running MCP server and the output is not fixed",
+        "disablePlayground": true
+      }
+    ]
+  },
+  {
+    "title": "Agent memory",
+    "column": 2,
+    "category": "Generative AI",
+    "samples": [
+      {
+        "name": "Agent in-memory conversation history",
+        "url": "agent-memory-in-memory",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the output is not fixed",
+        "disablePlayground": true
+      },
+      {
+        "name": "Agent memory with MSSQL",
+        "url": "agent-memory-mssql",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the output is not fixed",
+        "disablePlayground": true
+      }
+    ]
+  },
+  {
     "title": "Docker",
     "column": 0,
     "category": "Deployment",

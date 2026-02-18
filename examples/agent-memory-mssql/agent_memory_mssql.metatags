@@ -1,0 +1,2 @@
+description: This BBE demonstrates persistent AI agent memory using MsSQL as the backend store for multi-turn, cross-session conversation history.
+keywords: ballerina, ballerina by example, BBE, ai, agent, memory, mssql, sql server, persistent memory, conversation history, session

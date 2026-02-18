@@ -1,0 +1,3 @@
+$ bal run openai_chat.bal
+Assistant: This is typically caused by a file size limit set at the application or server level. Most frameworks and web servers enforce a maximum upload size that defaults to a few megabytes. You'll need to increase this limit in your application configuration and, if applicable, in your web server or reverse proxy settings.
+Assistant: You'll need to update the upload size limit in two places: first, in your application framework (for example, set `spring.servlet.multipart.max-file-size=100MB` in Spring Boot, or `MAX_CONTENT_LENGTH` in Flask), and second, in your web server or reverse proxy (for example, add `client_max_body_size 100m;` in your Nginx config). Restart both services after making the changes.

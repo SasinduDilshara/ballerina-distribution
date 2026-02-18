@@ -1,0 +1,6 @@
+$ bal run ollama_generate.bal
+Category: legal
+Subcategory: contract amendment
+Confidence: high
+Key Terms: ["Service Agreement","Amendment","Acme Corp","Beta Ltd","Section 4.2","contract term","twelve months"]
+Contains Sensitive Info: true

@@ -1,0 +1,2 @@
+description: This BBE demonstrates how to use the DeepSeek model provider with the Generate API for structured, type-safe LLM responses.
+keywords: ballerina, ballerina by example, BBE, ai, llm, deepseek, generate, structured output, model-provider, content categorization

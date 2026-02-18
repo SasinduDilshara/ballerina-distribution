@@ -1,0 +1,6 @@
+$ bal run openai_embedding.bal
+Semantic similarity to: "How do I reset my password?"
+---
+  "Steps to change your account credentials": 0.7842103838920593
+  "What is the weather like today?": 0.21034517884254456
+  "I forgot my login password, how can I recover it?": 0.8953421115875244

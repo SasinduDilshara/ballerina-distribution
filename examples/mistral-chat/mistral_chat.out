@@ -1,0 +1,28 @@
+$ bal run mistral_chat.bal
+Reviewer: This function has several critical issues: **1. SQL Injection vulnerability** — concatenating `user_id` directly into the query string allows an attacker to inject arbitrary SQL. Use parameterized queries instead. **2. Connection leak** — a new database connection is created on every call and never closed, which will exhaust the connection pool under load. Use a connection pool or a context manager. **3. Hardcoded connection string** — the production DB URL is embedded in the code; it should come from environment variables or a secrets manager. **4. No error handling** — if the query fails or the user is not found, `None` is returned silently with no indication of the cause.
+Reviewer: Here is a corrected version:
+
+```python
+import os
+import psycopg2
+from psycopg2 import pool
+
+# Initialize a connection pool (do this once at module level)
+connection_pool = pool.SimpleConnectionPool(
+    minconn=1, maxconn=10,
+    dsn=os.environ["DATABASE_URL"]
+)
+
+def get_user(user_id: int) -> dict | None:
+    conn = connection_pool.getconn()
+    try:
+        with conn.cursor() as cursor:
+            # Use a parameterized query to prevent SQL injection
+            cursor.execute("SELECT * FROM users WHERE id = %s", (user_id,))
+            row = cursor.fetchone()
+            return dict(zip([desc[0] for desc in cursor.description], row)) if row else None
+    except Exception as e:
+        raise RuntimeError(f"Failed to retrieve user {user_id}") from e
+    finally:
+        connection_pool.putconn(conn)
+```

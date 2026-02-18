@@ -1,0 +1,6 @@
+$ bal run rag_query_with_azure_ai_search.bal
+Query: How many days of bereavement leave are employees entitled to?
+Answer: Employees are entitled to up to 5 working days of bereavement leave upon the death of an immediate family member. Documentation may be required.
+
+Query: What notice period is required before taking maternity leave?
+Answer: Employees must provide at least 8 weeks' advance notice before taking maternity leave.

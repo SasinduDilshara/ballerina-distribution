@@ -1,0 +1,2 @@
+description: This BBE demonstrates how to initialize an MCP client, connect to an MCP server, and list all available tools.
+keywords: ballerina, ballerina by example, BBE, ai, mcp, model context protocol, mcp client, tools

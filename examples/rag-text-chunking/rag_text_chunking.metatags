@@ -1,0 +1,2 @@
+description: This BBE demonstrates RAG ingestion with explicit text chunking using GenericRecursiveChunker for control over chunk size and overlap.
+keywords: ballerina, ballerina by example, BBE, ai, rag, chunking, text chunking, GenericRecursiveChunker, vector store, embeddings

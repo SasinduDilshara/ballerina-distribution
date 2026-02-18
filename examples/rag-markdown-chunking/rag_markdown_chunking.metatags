@@ -1,0 +1,2 @@
+description: This BBE demonstrates RAG ingestion with Markdown-aware chunking using MarkdownChunker to split documents by header structure.
+keywords: ballerina, ballerina by example, BBE, ai, rag, chunking, markdown chunking, MarkdownChunker, vector store, embeddings

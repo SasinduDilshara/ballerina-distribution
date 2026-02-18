@@ -1,0 +1,2 @@
+description: This BBE demonstrates how to call tools on an MCP server using the MCP client, passing parameters and handling the tool response.
+keywords: ballerina, ballerina by example, BBE, ai, mcp, model context protocol, mcp client, tool call, tools

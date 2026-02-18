@@ -1,0 +1,5 @@
+$ bal run rag_text_chunking.bal
+Ingestion with text chunking successful
+
+Query: How many sick leave days are employees entitled to per year?
+Answer: All employees (full-time and part-time) are entitled to 12 days of paid sick leave per year. Sick leave does not accumulate from year to year.
