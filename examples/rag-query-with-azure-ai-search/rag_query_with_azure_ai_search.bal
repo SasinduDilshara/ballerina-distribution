@@ -39,20 +39,20 @@ public function main() returns error? {
     // Query 1: retrieve relevant chunks and generate an answer.
     string query1 = "How many days of bereavement leave are employees entitled to?";
     ai:QueryMatch[] matches1 = check knowledgeBase.retrieve(query1, 5);
-    ai:Chunk[] context1 = from ai:QueryMatch match in matches1 select match.chunk;
+    ai:Chunk[] context1 = from ai:QueryMatch m in matches1 select m.chunk;
 
     ai:ChatUserMessage augmentedQuery1 = ai:augmentUserQuery(context1, query1);
-    ai:ChatAssistantMessage answer1 = check chatModel->chat(augmentedQuery1);
+    ai:ChatAssistantMessage answer1 = check chatModel->chat(augmentedQuery1, []);
     io:println("Query: ", query1);
     io:println("Answer: ", answer1.content);
 
     // Query 2: demonstrate a second independent question against the same index.
     string query2 = "What notice period is required before taking maternity leave?";
     ai:QueryMatch[] matches2 = check knowledgeBase.retrieve(query2, 5);
-    ai:Chunk[] context2 = from ai:QueryMatch match in matches2 select match.chunk;
+    ai:Chunk[] context2 = from ai:QueryMatch m in matches2 select m.chunk;
 
     ai:ChatUserMessage augmentedQuery2 = ai:augmentUserQuery(context2, query2);
-    ai:ChatAssistantMessage answer2 = check chatModel->chat(augmentedQuery2);
+    ai:ChatAssistantMessage answer2 = check chatModel->chat(augmentedQuery2, []);
     io:println("\nQuery: ", query2);
     io:println("Answer: ", answer2.content);
 }

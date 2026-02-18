@@ -41,7 +41,7 @@ public function main() returns error? {
     // Query: retrieve semantically relevant chunks from Milvus.
     string query = "What are the rules for casual leave?";
     ai:QueryMatch[] matches = check knowledgeBase.retrieve(query, 5);
-    ai:Chunk[] context = from ai:QueryMatch match in matches select match.chunk;
+    ai:Chunk[] context = from ai:QueryMatch m in matches select m.chunk;
 
     // Augment the query with the retrieved context and generate an answer.
     ai:ChatUserMessage augmentedQuery = ai:augmentUserQuery(context, query);

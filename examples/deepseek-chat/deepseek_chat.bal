@@ -25,7 +25,7 @@ public function main() returns error? {
     ai:ChatMessage[] messages = [systemMessage, userMessage1];
 
     // Call the DeepSeek Chat API.
-    ai:ChatAssistantMessage response1 = check model->chat(messages);
+    ai:ChatAssistantMessage response1 = check model->chat(messages, []);
     io:println("Assistant: ", response1.content);
 
     // Ask for a concrete example as a follow-up.
@@ -37,6 +37,6 @@ public function main() returns error? {
     messages.push(userMessage2);
 
     // The model uses conversation history to provide a contextually relevant analogy.
-    ai:ChatAssistantMessage response2 = check model->chat(messages);
+    ai:ChatAssistantMessage response2 = check model->chat(messages, []);
     io:println("Assistant: ", response2.content);
 }

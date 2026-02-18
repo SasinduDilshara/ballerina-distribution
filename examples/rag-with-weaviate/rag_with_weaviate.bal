@@ -36,7 +36,7 @@ public function main() returns error? {
     // Query: retrieve relevant chunks from Weaviate using semantic search.
     string query = "How many days of maternity leave is an employee entitled to?";
     ai:QueryMatch[] matches = check knowledgeBase.retrieve(query, 5);
-    ai:Chunk[] context = from ai:QueryMatch match in matches select match.chunk;
+    ai:Chunk[] context = from ai:QueryMatch m in matches select m.chunk;
 
     // Augment the query with the retrieved context and generate an answer.
     ai:ChatUserMessage augmentedQuery = ai:augmentUserQuery(context, query);

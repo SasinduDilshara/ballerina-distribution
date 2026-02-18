@@ -31,7 +31,7 @@ public function main() returns error? {
     ai:ChatMessage[] messages = [systemMessage, userMessage1];
 
     // Call the Azure OpenAI Chat API.
-    ai:ChatAssistantMessage response1 = check model->chat(messages);
+    ai:ChatAssistantMessage response1 = check model->chat(messages, []);
     io:println("HR Assistant: ", response1.content);
 
     // Append the assistant's reply to the history and ask a follow-up.
@@ -43,6 +43,6 @@ public function main() returns error? {
     messages.push(userMessage2);
 
     // The model uses the full history to give a relevant, in-context response.
-    ai:ChatAssistantMessage response2 = check model->chat(messages);
+    ai:ChatAssistantMessage response2 = check model->chat(messages, []);
     io:println("HR Assistant: ", response2.content);
 }

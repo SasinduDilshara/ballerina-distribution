@@ -1,0 +1,5 @@
+$ bal run rag_pdf_chunking.bal
+Ingestion with PDF chunking successful
+
+Query: What is the procedure for requesting annual leave?
+Answer: To request annual leave, employees should submit a leave request via the HR portal or email, including the type of leave, the dates, and the reason if required. The manager will then review and approve or reject the request, after which HR will update the leave records. A minimum of 3 days' notice is required.

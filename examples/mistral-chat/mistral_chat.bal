@@ -30,7 +30,7 @@ def get_user(user_id):
     ai:ChatMessage[] messages = [systemMessage, userMessage1];
 
     // Call the Mistral Chat API.
-    ai:ChatAssistantMessage response1 = check model->chat(messages);
+    ai:ChatAssistantMessage response1 = check model->chat(messages, []);
     io:println("Reviewer: ", response1.content);
 
     // Follow up for a corrected version.
@@ -42,6 +42,6 @@ def get_user(user_id):
     messages.push(userMessage2);
 
     // The model uses the full history to provide a targeted fix.
-    ai:ChatAssistantMessage response2 = check model->chat(messages);
+    ai:ChatAssistantMessage response2 = check model->chat(messages, []);
     io:println("Reviewer: ", response2.content);
 }

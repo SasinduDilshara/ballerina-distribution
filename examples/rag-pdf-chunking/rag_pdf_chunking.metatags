@@ -1,0 +1,2 @@
+description: This BBE demonstrates RAG ingestion with PDF chunking using TextDataLoader to extract text from a PDF and GenericRecursiveChunker to split it for vector indexing.
+keywords: ballerina, ballerina by example, BBE, ai, rag, chunking, pdf, pdf chunking, TextDataLoader, GenericRecursiveChunker, vector store, embeddings

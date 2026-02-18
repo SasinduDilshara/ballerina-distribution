@@ -25,7 +25,7 @@ public function main() returns error? {
     ai:ChatMessage[] messages = [systemMessage, userMessage1];
 
     // Call the OpenAI Chat API with the conversation history.
-    ai:ChatAssistantMessage response1 = check model->chat(messages);
+    ai:ChatAssistantMessage response1 = check model->chat(messages, []);
     io:println("Assistant: ", response1.content);
 
     // Append the assistant's response to the history to preserve context.
@@ -39,6 +39,6 @@ public function main() returns error? {
     messages.push(userMessage2);
 
     // The model uses the full conversation history to give a contextually relevant response.
-    ai:ChatAssistantMessage response2 = check model->chat(messages);
+    ai:ChatAssistantMessage response2 = check model->chat(messages, []);
     io:println("Assistant: ", response2.content);
 }
