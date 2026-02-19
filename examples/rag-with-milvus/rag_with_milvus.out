@@ -1,5 +1,5 @@
 $ bal run rag_with_milvus.bal
 Ingestion into Milvus successful
 
-Query: What are the rules for casual leave?
-Answer: Employees are entitled to 8 days of casual leave per year for short-term personal reasons such as family emergencies or urgent personal matters. Prior manager approval is required where possible.
+Query: What wireless headphones are available under $100?
+Answer: There are two wireless headphone options under $100: the BassMax Wireless 50 at $89 (over-ear with passive noise isolation, Bluetooth 5.0, up to 30 hours battery, foldable with a built-in microphone, best for everyday listening and commuting) and the StudyPods Lite at $39 (true wireless earbuds, Bluetooth 5.0, 6 hours per charge plus 18 hours from the case, best for budget-conscious buyers and casual listening).

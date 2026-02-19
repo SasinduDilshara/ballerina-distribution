@@ -13,7 +13,7 @@ final ai:VectorStore vectorStore = check new milvus:VectorStore(
     milvusServiceUrl,
     milvusApiKey,
     {
-        collectionName: "LeavePolicyChunks",
+        collectionName: "ProductCatalogChunks",
         primaryKeyField: "id",
         additionalFields: ["content", "source"]
     }
@@ -30,16 +30,16 @@ final ai:KnowledgeBase knowledgeBase =
 final ai:ModelProvider modelProvider = check ai:getDefaultModelProvider();
 
 public function main() returns error? {
-    // Load the leave policy document using TextDataLoader.
-    ai:DataLoader loader = check new ai:TextDataLoader("./leave_policy.md");
+    // Load the product catalog using TextDataLoader.
+    ai:DataLoader loader = check new ai:TextDataLoader("./product_catalog.md");
     ai:Document|ai:Document[] documents = check loader.load();
 
     // Ingest: documents are chunked, embedded, and stored in the Milvus collection.
     check knowledgeBase.ingest(documents);
     io:println("Ingestion into Milvus successful");
 
-    // Query: retrieve semantically relevant chunks from Milvus.
-    string query = "What are the rules for casual leave?";
+    // Query: retrieve the most relevant product descriptions from Milvus.
+    string query = "What wireless headphones are available under $100?";
     ai:QueryMatch[] matches = check knowledgeBase.retrieve(query, 5);
     ai:Chunk[] context = from ai:QueryMatch m in matches select m.chunk;
 

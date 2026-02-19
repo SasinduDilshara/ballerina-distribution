@@ -16,7 +16,7 @@ final ai:VectorStore vectorStore = check new pgvector:VectorStore(
     dbUser,
     dbPassword,
     dbName,
-    tableName = "leave_policy_chunks"
+    tableName = "travel_guide_chunks"
 );
 
 // Use the default embedding provider (configured via VS Code command).
@@ -30,16 +30,16 @@ final ai:KnowledgeBase knowledgeBase =
 final ai:ModelProvider modelProvider = check ai:getDefaultModelProvider();
 
 public function main() returns error? {
-    // Load the leave policy document using TextDataLoader.
-    ai:DataLoader loader = check new ai:TextDataLoader("./leave_policy.md");
+    // Load the travel guide document using TextDataLoader.
+    ai:DataLoader loader = check new ai:TextDataLoader("./travel_guide.md");
     ai:Document|ai:Document[] documents = check loader.load();
 
     // Ingest: documents are chunked, embedded, and stored in the PostgreSQL table.
     check knowledgeBase.ingest(documents);
     io:println("Ingestion into PostgreSQL (pgvector) successful");
 
-    // Query: retrieve semantically relevant chunks from the pgvector table.
-    string query = "What happens to unused annual leave at the end of the year?";
+    // Query: retrieve the most relevant travel guide sections.
+    string query = "What are the must-visit places in Kyoto and when is the best time to go?";
     ai:QueryMatch[] matches = check knowledgeBase.retrieve(query, 5);
     ai:Chunk[] context = from ai:QueryMatch m in matches select m.chunk;
 

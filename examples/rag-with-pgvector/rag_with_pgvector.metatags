@@ -1,2 +1,2 @@
-description: This BBE demonstrates a complete RAG workflow using PostgreSQL with pgvector as the vector database for document ingestion and semantic retrieval.
-keywords: ballerina, ballerina by example, BBE, ai, rag, pgvector, postgresql, vector database, vector store, embeddings, retrieval-augmented generation
+description: This BBE demonstrates a complete RAG workflow using PostgreSQL with pgvector, ingesting a travel destination guide and answering natural-language travel planning queries.
+keywords: ballerina, ballerina by example, BBE, ai, rag, pgvector, postgresql, vector database, vector store, embeddings, retrieval-augmented generation, travel guide, semantic search

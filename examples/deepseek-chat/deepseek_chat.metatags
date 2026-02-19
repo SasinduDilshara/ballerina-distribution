@@ -1,2 +1,2 @@
-description: This BBE demonstrates how to use the DeepSeek model provider with the Chat API for multi-turn conversations.
-keywords: ballerina, ballerina by example, BBE, ai, llm, deepseek, chat, model-provider
+description: This BBE demonstrates multi-turn financial planning conversations using the DeepSeek Chat model, showing how conversation history enables contextually grounded follow-up responses.
+keywords: ballerina, ballerina by example, BBE, ai, llm, deepseek, chat, model-provider, financial planning, multi-turn conversation

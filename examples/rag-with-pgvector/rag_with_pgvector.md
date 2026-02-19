@@ -4,7 +4,7 @@ The [`ballerinax/ai.pgvector`](https://central.ballerina.io/ballerinax/ai.pgvect
 
 This approach is especially practical for teams that already operate PostgreSQL in production: vector search, transactional data, and metadata can coexist in the same database, simplifying infrastructure. The `pgvector:VectorStore` accepts standard PostgreSQL connection parameters (`host`, `user`, `password`, `database`) and a table name; the table is created automatically on first use.
 
-This example demonstrates a complete RAG workflow using pgvector: ingesting a Markdown leave policy document into a PostgreSQL table and answering a question about year-end leave encashment from the indexed content.
+This example demonstrates a complete RAG workflow using pgvector: ingesting an Asia travel destination guide into a PostgreSQL table and answering a travel planning query — "What are the must-visit places in Kyoto and when is the best time to go?" — from the indexed content.
 
 > Note: This example uses the default embedding provider and model provider. Set `dbHost`, `dbUser`, `dbPassword`, and `dbName` in the `Config.toml` file with your PostgreSQL connection details. Ensure the pgvector extension is installed (`CREATE EXTENSION IF NOT EXISTS vector;`). To configure the WSO2 default provider, open the VS Code command palette and run the `Configure default WSO2 Model Provider` command.
 
@@ -15,7 +15,8 @@ For more information on the underlying module, see the [`ballerinax/ai.pgvector`
 ::: out rag_with_pgvector.out :::
 
 ## Related links
-- [Sample policy document](https://github.com/ballerina-platform/ballerina-distribution/tree/master/examples/rag-with-pgvector/leave_policy.md)
+
+- [Sample travel guide](https://github.com/ballerina-platform/ballerina-distribution/tree/master/examples/rag-with-pgvector/travel_guide.md)
 - [RAG with in-memory vector store example](/learn/by-example/rag-with-in-memory-vector-store/)
 - [RAG with Weaviate example](/learn/by-example/rag-with-weaviate/)
 - [RAG with Milvus example](/learn/by-example/rag-with-milvus/)

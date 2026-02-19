@@ -9,34 +9,35 @@ configurable string apiKey = ?;
 final deepseek:ModelProvider model = check new (apiKey, deepseek:DEEPSEEK_CHAT);
 
 public function main() returns error? {
-    // Define a system message for a technical Q&A assistant.
+    // Define a system message for a personal financial planning assistant.
     ai:ChatSystemMessage systemMessage = {
         role: ai:SYSTEM,
-        content: "You are a knowledgeable technical assistant. Answer questions clearly and concisely, with examples where helpful."
+        content: "You are a practical personal finance advisor. Help users plan budgets and savings goals with clear, actionable advice."
     };
 
-    // First question about a programming concept.
+    // First message: state the savings goal and ask if it is achievable.
     ai:ChatUserMessage userMessage1 = {
         role: ai:USER,
-        content: "What is the difference between concurrency and parallelism?"
+        content: "I earn $4,000 per month after tax and want to save $10,000 in the next 12 months. Is that realistic?"
     };
 
-    // Build conversation history.
+    // Build conversation history with the system context and first message.
     ai:ChatMessage[] messages = [systemMessage, userMessage1];
 
-    // Call the DeepSeek Chat API.
+    // Call the DeepSeek Chat API — the model reasons about the numbers and gives an assessment.
     ai:ChatAssistantMessage response1 = check model->chat(messages, []);
-    io:println("Assistant: ", response1.content);
+    io:println("Advisor: ", response1.content);
 
-    // Ask for a concrete example as a follow-up.
+    // Follow up with a breakdown of current expenses — the model uses the prior context
+    // (income and savings goal) to give tailored advice.
     messages.push(response1);
     ai:ChatUserMessage userMessage2 = {
         role: ai:USER,
-        content: "Can you give me a real-world analogy to illustrate the difference?"
+        content: "My monthly expenses are: rent $1,200, groceries $400, transport $200, subscriptions $100. What should I adjust?"
     };
     messages.push(userMessage2);
 
-    // The model uses conversation history to provide a contextually relevant analogy.
+    // The model reasons over all prior context to suggest a concrete budget adjustment.
     ai:ChatAssistantMessage response2 = check model->chat(messages, []);
-    io:println("Assistant: ", response2.content);
+    io:println("Advisor: ", response2.content);
 }

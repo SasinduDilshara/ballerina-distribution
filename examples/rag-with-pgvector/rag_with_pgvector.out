@@ -1,5 +1,5 @@
 $ bal run rag_with_pgvector.bal
 Ingestion into PostgreSQL (pgvector) successful
 
-Query: What happens to unused annual leave at the end of the year?
-Answer: Up to 5 unused annual leave days can be carried forward to the next calendar year. Any remaining unused days beyond that limit are forfeited, unless the employee requests encashment before year-end. To be eligible for encashment, the employee must have completed at least 12 months of continuous service.
+Query: What are the must-visit places in Kyoto and when is the best time to go?
+Answer: The best time to visit Kyoto is March–May for cherry blossom season or October–November for autumn foliage. Must-visit places include Fushimi Inari Taisha (thousands of vermilion torii gates — hike the full trail for fewer crowds), Arashiyama Bamboo Grove (arrive before 7 am to beat tour groups), the Gion District (traditional geisha district, best explored on an evening stroll along Hanamikoji Street), and Kinkaku-ji (the iconic Golden Pavilion, Kyoto's most visited attraction).
