@@ -20,7 +20,8 @@ final ai:VectorStore vectorStore = check new milvus:VectorStore(
 );
 
 // Use the default embedding provider (configured via VS Code command).
-final ai:EmbeddingProvider embeddingProvider = check ai:getDefaultEmbeddingProvider();
+final ai:EmbeddingProvider embeddingProvider =
+    check ai:getDefaultEmbeddingProvider();
 
 // Build a knowledge base backed by the Milvus vector store.
 final ai:KnowledgeBase knowledgeBase =

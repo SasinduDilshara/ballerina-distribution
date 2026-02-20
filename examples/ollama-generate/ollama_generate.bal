@@ -24,11 +24,13 @@ type DocumentClassification record {|
 
 public function main() returns error? {
     string documentExcerpt = string `
-        This Amendment to the Service Agreement ("Amendment") is entered into as of
-        January 1, 2025, by and between Acme Corp ("Provider") and Beta Ltd ("Client").
-        Both parties agree to modify Section 4.2 of the original agreement dated
-        March 15, 2023, to extend the contract term by an additional twelve (12) months.
-        All other terms and conditions of the original agreement remain in full force.
+        This Amendment to the Service Agreement ("Amendment") is
+        entered into as of January 1, 2025, by and between Acme Corp
+        ("Provider") and Beta Ltd ("Client"). Both parties agree to
+        modify Section 4.2 of the original agreement dated March 15,
+        2023, to extend the contract term by an additional twelve (12)
+        months. All other terms and conditions of the original agreement
+        remain in full force.
     `;
 
     // Use `generate` with a typed return to classify the document locally.
@@ -46,5 +48,6 @@ public function main() returns error? {
     io:println("Subcategory: ", classification.subcategory);
     io:println("Confidence: ", classification.confidence);
     io:println("Key Terms: ", classification.keyTerms);
-    io:println("Contains Sensitive Info: ", classification.containsSensitiveInfo);
+    io:println("Contains Sensitive Info: ",
+        classification.containsSensitiveInfo);
 }

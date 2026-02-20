@@ -1,2 +1,2 @@
-description: This BBE demonstrates AI agents.
-keywords: ballerina, ballerina by example, BBE, ai, llm, model-provider, agent
+description: This BBE demonstrates how to create an AI agent that uses local Ballerina functions as tools to manage tasks.
+keywords: ballerina, ballerina by example, ai agent, tools, llm

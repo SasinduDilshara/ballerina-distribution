@@ -5,7 +5,8 @@ import ballerina/io;
 final ai:VectorStore vectorStore = check new ai:InMemoryVectorStore();
 
 // Use the default embedding provider (configured via VS Code command).
-final ai:EmbeddingProvider embeddingProvider = check ai:getDefaultEmbeddingProvider();
+final ai:EmbeddingProvider embeddingProvider =
+    check ai:getDefaultEmbeddingProvider();
 
 // Create a MarkdownChunker that splits Markdown documents by header structure.
 // By default it uses MARKDOWN_HEADER strategy, splitting at ## headers first,

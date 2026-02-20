@@ -1,2 +1,2 @@
-description: This BBE demonstrates AI agents integrated with external endpoints as tools.
-keywords: ballerina, ballerina by example, BBE, ai, llm, model-provider, agent
+description: This BBE demonstrates how to create an AI agent with Gmail and Google Calendar APIs as tools for email and scheduling.
+keywords: ballerina, ballerina by example, ai agent, gmail, google calendar

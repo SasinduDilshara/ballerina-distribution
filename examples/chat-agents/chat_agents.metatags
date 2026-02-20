@@ -1,2 +1,2 @@
-description: This BBE demonstrates chat agents.
-keywords: ballerina, ballerina by example, BBE, ai, llm, model-provider, agent, chat
+description: This BBE demonstrates how to expose an AI agent as an HTTP service for session-aware multi-turn conversations.
+keywords: ballerina, ballerina by example, ai agent, http service, llm

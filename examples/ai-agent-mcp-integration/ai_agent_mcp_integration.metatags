@@ -1,2 +1,2 @@
-description: This BBE demonstrates AI agents integrated with MCP tools.
-keywords: ballerina, ballerina by example, BBE, ai, llm, model-provider, agent, mcp
+description: This BBE demonstrates how to create an AI agent integrated with Model Context Protocol (MCP) tools.
+keywords: ballerina, ballerina by example, ai agent, mcp, llm

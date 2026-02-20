@@ -8,7 +8,8 @@ configurable string deploymentId = ?;
 configurable string apiVersion = ?;
 
 // Initialize the Azure OpenAI model provider.
-final azure:OpenAiModelProvider model = check new (serviceUrl, apiKey, deploymentId, apiVersion);
+final azure:OpenAiModelProvider model =
+    check new (serviceUrl, apiKey, deploymentId, apiVersion);
 
 // Define the expected structured response type for content moderation.
 // The `generate` method maps the LLM's JSON response directly to this record.
@@ -27,20 +28,24 @@ type ContentReview record {|
 
 public function main() returns error? {
     string articleContent = string `
-        Ballerina's query expressions bring SQL-like syntax into the language, allowing
-        developers to filter, transform, and aggregate data from lists and tables using
-        intuitive 'from', 'where', 'select', and 'group by' clauses. This makes data
-        processing workflows more readable and less error-prone compared to imperative loops.
+        Ballerina's query expressions bring SQL-like syntax into the
+        language, allowing developers to filter, transform, and aggregate
+        data from lists and tables using intuitive 'from', 'where',
+        'select', and 'group by' clauses. This makes data processing
+        workflows more readable and less error-prone compared to
+        imperative loops.
     `;
 
     // Use `generate` with a typed return to get a structured ContentReview.
     // The model infers the JSON schema from the return type and populates it.
     ContentReview review = check model->generate(
-        `Review the following technical article content and provide structured feedback:
+        `Review the following technical article content and
+        provide structured feedback:
 
         ${articleContent}
 
-        Evaluate the quality, detect the sentiment, extract key topics, check for
+        Evaluate the quality, detect the sentiment, extract key topics,
+        check for
         inappropriate material, and suggest improvements if needed.`
     );
 

@@ -16,7 +16,8 @@ public function main(string subject) returns error? {
     io:println(joke);
 
     // An LLM call with a structured response type.
-    JokeResponse jokeResponse = check model->generate(`Tell me a joke about ${subject}!`);
+    JokeResponse jokeResponse = check model->generate(
+        `Tell me a joke about ${subject}!`);
     io:println("Setup: ", jokeResponse.setup);
     io:println("Punchline: ", jokeResponse.punchline);
 }

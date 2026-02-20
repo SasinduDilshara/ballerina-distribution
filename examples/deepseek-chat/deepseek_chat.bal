@@ -12,13 +12,16 @@ public function main() returns error? {
     // Define a system message for a personal financial planning assistant.
     ai:ChatSystemMessage systemMessage = {
         role: ai:SYSTEM,
-        content: "You are a practical personal finance advisor. Help users plan budgets and savings goals with clear, actionable advice."
+        content: "You are a practical personal finance advisor. " +
+                 "Help users plan budgets and savings goals with " +
+                 "clear, actionable advice."
     };
 
     // First message: state the savings goal and ask if it is achievable.
     ai:ChatUserMessage userMessage1 = {
         role: ai:USER,
-        content: "I earn $4,000 per month after tax and want to save $10,000 in the next 12 months. Is that realistic?"
+        content: "I earn $4,000 per month after tax and want to " +
+                 "save $10,000 in the next 12 months. Is that realistic?"
     };
 
     // Build conversation history with the system context and first message.
@@ -33,7 +36,9 @@ public function main() returns error? {
     messages.push(response1);
     ai:ChatUserMessage userMessage2 = {
         role: ai:USER,
-        content: "My monthly expenses are: rent $1,200, groceries $400, transport $200, subscriptions $100. What should I adjust?"
+        content: "My monthly expenses are: rent $1,200, groceries " +
+                 "$400, transport $200, subscriptions $100. " +
+                 "What should I adjust?"
     };
     messages.push(userMessage2);
 

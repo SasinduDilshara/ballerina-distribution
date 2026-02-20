@@ -1,2 +1,2 @@
-description: This BBE demonstrates how to do direct LLM calls.
-keywords: ballerina, ballerina by example, BBE, ai, llm, model-provider
+description: This BBE demonstrates how to make direct LLM calls with structured and unstructured outputs using a model provider.
+keywords: ballerina, ballerina by example, llm, ai, generate

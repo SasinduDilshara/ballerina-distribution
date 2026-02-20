@@ -7,7 +7,8 @@ configurable string apiKey = ?;
 
 // Initialize the OpenAI embedding provider.
 // TEXT_EMBEDDING_3_SMALL is a fast, cost-effective model for semantic similarity tasks.
-final openai:EmbeddingProvider embedder = check new (apiKey, openai:TEXT_EMBEDDING_3_SMALL);
+final openai:EmbeddingProvider embedder =
+    check new (apiKey, openai:TEXT_EMBEDDING_3_SMALL);
 
 // Compute the dot product of two vectors as the similarity score.
 // OpenAI embeddings are unit-normalized, so dot product equals cosine similarity.
@@ -33,7 +34,8 @@ public function main() returns error? {
     float[] refVec = check referenceEmbedding.cloneWithType();
 
     // Generate embeddings for all candidates in one batch call.
-    ai:Embedding[] candidateEmbeddings = check embedder->batchEmbed(candidateChunks);
+    ai:Embedding[] candidateEmbeddings =
+        check embedder->batchEmbed(candidateChunks);
 
     // Compare each candidate against the reference using dot product similarity.
     io:println("Semantic similarity to: \"", referenceChunk.content, "\"");

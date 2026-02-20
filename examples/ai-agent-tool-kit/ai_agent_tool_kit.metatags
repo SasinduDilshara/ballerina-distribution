@@ -1,2 +1,2 @@
-description: This BBE demonstrates AI agents with tool kits.
-keywords: ballerina, ballerina by example, BBE, ai, llm, model-provider, agent
+description: This BBE demonstrates how to create an AI agent with encapsulated tool kits for better code organization.
+keywords: ballerina, ballerina by example, ai agent, tool kit, llm

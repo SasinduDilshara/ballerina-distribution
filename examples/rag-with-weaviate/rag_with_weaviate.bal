@@ -15,7 +15,8 @@ final ai:VectorStore vectorStore = check new weaviate:VectorStore(
 );
 
 // Use the default embedding provider (configured via VS Code command).
-final ai:EmbeddingProvider embeddingProvider = check ai:getDefaultEmbeddingProvider();
+final ai:EmbeddingProvider embeddingProvider =
+    check ai:getDefaultEmbeddingProvider();
 
 // Build a knowledge base backed by the Weaviate vector store.
 final ai:KnowledgeBase knowledgeBase =
@@ -34,7 +35,8 @@ public function main() returns error? {
     io:println("Ingestion into Weaviate successful");
 
     // Query: retrieve relevant chunks from Weaviate using semantic search.
-    string query = "How many days of maternity leave is an employee entitled to?";
+    string query = "How many days of maternity leave is an " +
+                   "employee entitled to?";
     ai:QueryMatch[] matches = check knowledgeBase.retrieve(query, 5);
     ai:Chunk[] context = from ai:QueryMatch m in matches select m.chunk;
 

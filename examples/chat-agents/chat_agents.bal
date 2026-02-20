@@ -3,12 +3,13 @@ import ballerina/http;
 import ballerina/time;
 import ballerina/uuid;
 
-// Declare a service attached to an `ai:Listener` listener 
+// Declare a service attached to an `ai:Listener` listener
 // to interact with the agent.
 service /tasks on new ai:Listener(8080) {
-    resource function post chat(@http:Payload ai:ChatReqMessage request) 
-						returns ai:ChatRespMessage|error {
-        string response = check taskAssistantAgent.run(request.message, request.sessionId);
+    resource function post chat(@http:Payload ai:ChatReqMessage request)
+            returns ai:ChatRespMessage|error {
+        string response = check taskAssistantAgent.run(
+            request.message, request.sessionId);
         return {message: response};
     }
 }
@@ -58,7 +59,7 @@ isolated function getCurrentDate() returns time:Date {
 final ai:Agent taskAssistantAgent = check new ({
     systemPrompt: {
         role: "Task Assistant",
-        instructions: string `You are a helpful assistant for 
+        instructions: string `You are a helpful assistant for
             managing a to-do list. You can manage tasks and
             help a user plan their schedule.`
     },

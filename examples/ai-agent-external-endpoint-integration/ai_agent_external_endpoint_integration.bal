@@ -32,14 +32,16 @@ isolated function readUnreadEmails() returns gmail:Message[]|error {
     }
 
     gmail:Message[] completeMessages = from gmail:Message message in messages
-        select check gmailClient->/users/me/messages/[message.id](format = "full");
+        select check gmailClient->/users/me/messages/[message.id](
+            format = "full");
     return completeMessages;
 }
 
 @ai:AgentTool
 isolated function sendEmail(string[] to, string subject, string body) 
         returns gmail:Message|error {
-    return gmailClient->/users/me/messages/send.post({to, subject, bodyInText: body});
+    return gmailClient->/users/me/messages/send.post(
+        {to, subject, bodyInText: body});
 }
 
 @ai:AgentTool
@@ -72,13 +74,15 @@ final ai:Agent personalAssistantAgent = check new (
                 sending emails.
             - Provide concise summaries when retrieving information unless the 
                 user requests details.
-            - Prioritize clarity, efficiency, and user convenience in all tasks.`
+            - Prioritize clarity, efficiency, and user convenience in
+            all tasks.`
     },
     // Use the default model provider (with configuration added via a 
     // Ballerina VS Code command).
     model = check ai:getDefaultModelProvider(),
     // Specify the tools the agent can use.
-    tools = [readUnreadEmails, sendEmail, getCalendarEvents, createCalendarEvent]
+    tools = [readUnreadEmails, sendEmail,
+        getCalendarEvents, createCalendarEvent]
 );
 
 public function main() returns error? {

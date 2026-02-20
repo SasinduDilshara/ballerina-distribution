@@ -5,13 +5,15 @@ import ballerina/io;
 final ai:VectorStore vectorStore = check new ai:InMemoryVectorStore();
 
 // Use the default embedding provider (configured via VS Code command).
-final ai:EmbeddingProvider embeddingProvider = check ai:getDefaultEmbeddingProvider();
+final ai:EmbeddingProvider embeddingProvider =
+    check ai:getDefaultEmbeddingProvider();
 
 // Create a GenericRecursiveChunker to split the text extracted from the PDF.
 // TextDataLoader extracts plain text from the PDF; GenericRecursiveChunker then
 // splits that text at paragraph boundaries, falling back to sentence, word, and
 // character boundaries. The overlap preserves context across chunk boundaries.
-final ai:GenericRecursiveChunker chunker = new (maxChunkSize = 300, maxOverlapSize = 50);
+final ai:GenericRecursiveChunker chunker =
+    new (maxChunkSize = 300, maxOverlapSize = 50);
 
 // Build a knowledge base using the explicit chunker instead of the default AUTO chunker.
 // This gives fine-grained control over how the extracted PDF text is split before embedding.

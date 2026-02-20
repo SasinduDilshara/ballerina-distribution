@@ -4,7 +4,8 @@ import ballerina/mcp;
 public function main() returns error? {
     // Initialize the MCP client, pointing it at a running MCP server.
     // The server must be accessible at the given URL (e.g., the mcp-service BBE).
-    mcp:StreamableHttpClient mcpClient = check new ("http://localhost:9090/mcp");
+    mcp:StreamableHttpClient mcpClient =
+        check new ("http://localhost:9090/mcp");
 
     // Send the MCP `initialize` handshake to the server.
     // This establishes the session and negotiates protocol capabilities.
@@ -18,7 +19,8 @@ public function main() returns error? {
     mcp:ListToolsResult toolsResult = check mcpClient->listTools();
     io:println("Available tools (", toolsResult.tools.length(), "):");
     foreach mcp:ToolDefinition tool in toolsResult.tools {
-        io:println("  - ", tool.name, ": ", tool.description ?: "(no description)");
+        io:println("  - ", tool.name, ": ",
+            tool.description ?: "(no description)");
     }
 
     // Close the MCP client session when done.

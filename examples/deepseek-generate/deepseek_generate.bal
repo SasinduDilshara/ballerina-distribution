@@ -26,10 +26,11 @@ type ArticleMetadata record {|
 public function main() returns error? {
     string articleExcerpt = string `
         Kubernetes has become the de facto standard for container orchestration,
-        but its complexity often intimidates newcomers. In this guide, we walk through
-        setting up your first cluster, deploying a simple application, and configuring
-        autoscaling. By the end, you'll have a working cluster and understand the core
-        concepts of pods, services, and deployments. No prior Kubernetes experience needed.
+        but its complexity often intimidates newcomers. In this guide,
+        we walk through setting up your first cluster, deploying a simple
+        application, and configuring autoscaling. By the end, you'll have
+        a working cluster and understand the core concepts of pods,
+        services, and deployments. No prior Kubernetes experience needed.
     `;
 
     // Use `generate` with a typed return to categorize the article and extract metadata.

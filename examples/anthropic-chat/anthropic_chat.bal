@@ -6,19 +6,23 @@ import ballerinax/ai.anthropic;
 configurable string apiKey = ?;
 
 // Initialize the Anthropic model provider with the Claude Sonnet model.
-final anthropic:ModelProvider model = check new (apiKey, anthropic:CLAUDE_SONNET_4_20250514);
+final anthropic:ModelProvider model =
+    check new (apiKey, anthropic:CLAUDE_SONNET_4_20250514);
 
 public function main() returns error? {
     // Start a research Q&A session with a system message that defines the assistant's role.
     ai:ChatSystemMessage systemMessage = {
         role: ai:SYSTEM,
-        content: "You are a knowledgeable research assistant. Provide accurate, well-structured answers. Keep responses concise and cite key concepts where relevant."
+        content: "You are a knowledgeable research assistant. Provide " +
+                 "accurate, well-structured answers. Keep responses " +
+                 "concise and cite key concepts where relevant."
     };
 
     // First research question about a technical topic.
     ai:ChatUserMessage userMessage1 = {
         role: ai:USER,
-        content: "What is the CAP theorem and why is it important for distributed systems?"
+        content: "What is the CAP theorem and why is it important " +
+                 "for distributed systems?"
     };
 
     // Build the conversation history.

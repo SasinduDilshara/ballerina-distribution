@@ -19,7 +19,8 @@ type Description record {|
 public function main() returns error? {
     // Define an `ai:ImageDocument` value with a URL to an image.
     ai:ImageDocument image = {
-        content: "https://ballerina.io/img/branding/ballerina_logo_dgrey_png.png"
+        content: "https://ballerina.io/img/branding/" +
+                 "ballerina_logo_dgrey_png.png"
     };
 
     // Use the `generate` method with an image document as an interpolation.

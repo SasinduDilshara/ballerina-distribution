@@ -42,7 +42,8 @@ final ai:ShortTermMemory memory = check new (
 final ai:Agent taskAgent = check new ({
     systemPrompt: {
         role: "Task Assistant",
-        instructions: "You are a helpful task management assistant. Help users manage their to-do list."
+        instructions: "You are a helpful task management assistant. " +
+                      "Help users manage their to-do list."
     },
     tools: [addTask, listTasks],
     model: modelProvider,
@@ -54,11 +55,13 @@ public function main() returns error? {
     // The `sessionId` links turns of the same conversation together in memory.
     string sessionId = "user-alice";
 
-    string response1 = check taskAgent.run("I need to buy groceries by tomorrow.", sessionId);
+    string response1 = check taskAgent.run(
+        "I need to buy groceries by tomorrow.", sessionId);
     io:println("Agent: ", response1);
 
     // In a second turn, the agent recalls from memory what was discussed.
-    string response2 = check taskAgent.run("Also add 'Pay electricity bill' for next Friday.", sessionId);
+    string response2 = check taskAgent.run(
+        "Also add 'Pay electricity bill' for next Friday.", sessionId);
     io:println("Agent: ", response2);
 
     // The agent can look up prior context without re-stating it.

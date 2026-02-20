@@ -6,7 +6,8 @@ configurable string apiKey = ?;
 
 // Initialize the Mistral model provider.
 // Mistral Small is efficient and well-suited for structured extraction tasks.
-final mistral:ModelProvider model = check new (apiKey, mistral:MISTRAL_SMALL_LATEST);
+final mistral:ModelProvider model =
+    check new (apiKey, mistral:MISTRAL_SMALL_LATEST);
 
 // Define the expected code quality analysis result type.
 // The `generate` method infers a JSON schema from this type and
@@ -38,11 +39,13 @@ public function main() returns error? {
     // Use `generate` to analyze code quality and receive a structured report.
     // The model returns JSON matching the CodeQualityReport schema.
     CodeQualityReport report = check model->generate(
-        `Analyze the following JavaScript code snippet and provide a code quality report:
+        `Analyze the following JavaScript code snippet
+        and provide a code quality report:
 
         ${codeSnippet}
 
-        Evaluate quality score, list issues, estimate complexity, check naming conventions,
+        Evaluate quality score, list issues, estimate complexity,
+        check naming conventions,
         and provide your top recommendation.`
     );
 

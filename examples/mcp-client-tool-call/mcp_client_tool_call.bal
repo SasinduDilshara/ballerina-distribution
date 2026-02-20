@@ -3,7 +3,8 @@ import ballerina/mcp;
 
 public function main() returns error? {
     // Initialize the MCP client connected to the weather MCP server.
-    mcp:StreamableHttpClient mcpClient = check new ("http://localhost:9090/mcp");
+    mcp:StreamableHttpClient mcpClient =
+        check new ("http://localhost:9090/mcp");
 
     // Complete the MCP handshake to establish the session.
     _ = check mcpClient->initialize(

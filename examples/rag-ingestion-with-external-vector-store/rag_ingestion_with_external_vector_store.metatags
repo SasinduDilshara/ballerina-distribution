@@ -1,2 +1,2 @@
-description: This BBE demonstrates how to do data ingestion for retrieval-augmented generation (RAG).
-keywords: ballerina, ballerina by example, BBE, ai, llm, rag
+description: This BBE demonstrates RAG document ingestion into an external vector store (Pinecone) using an embedding provider.
+keywords: ballerina, ballerina by example, rag, pinecone, vector store

@@ -33,30 +33,33 @@ service mcp:Service /mcp on mcpListener {
 
     // The remote methods defined in this service become MCP tools.
     // The MCP listener handles listing and calling the tools on MCP requests.
-    // The tool descriptions and schema are generated from the method signatures 
+    // The tool descriptions and schema are generated from the method signatures
     // and the documentation.
     # Get current weather for a city.
-    # 
+    #
     # + city - City name (e.g., "New York", "Tokyo")
     # + return - Current weather data for the specified city
     remote function getCurrentWeather(string city) returns Weather|error {
         Weather mockWeather = check getMockWeather(city);
-        log:printInfo(string `Weather data retrieved for ${
-                        city}: ${mockWeather.condition}, ${mockWeather.temperature}°C`);
+        log:printInfo("Weather data retrieved for " + city + ": " +
+            mockWeather.condition + ", " +
+            mockWeather.temperature.toString() + "°C");
         return mockWeather;
     };
 
     # Get weather forecast for upcoming days.
     #
-    # + location - City name or coordinates (e.g., "London", "40.7128,-74.0060") 
+    # + location - City name or coordinates (e.g., "London", "40.7128,-74.0060")
     # + days - Number of days to forecast (1 - 7)
     # + return - Weather forecast for the specified location and days
-    remote function getWeatherForecast(string location, int days) returns WeatherForecast|error {
+    remote function getWeatherForecast(string location, int days)
+            returns WeatherForecast|error {
         WeatherForecast mockForecast = {
-            forecast: check getMockForecastItems(days), 
+            forecast: check getMockForecastItems(days),
             location
         };
-        log:printInfo(string `Forecast generated for ${location}: ${days} days with random data`);
+        log:printInfo("Forecast generated for " + location + ": " +
+            days.toString() + " days with random data");
         return mockForecast;
     }
 }
@@ -71,11 +74,14 @@ function getMockWeather(string city) returns Weather|error => {
 };
 
 function getMockForecastItems(int days) returns ForecastItem[]|error {
-    string[] conditions = ["Sunny", "Cloudy", "Rainy", "Windy", "Stormy", "Snowy"];
+    string[] conditions = [
+        "Sunny", "Cloudy", "Rainy", "Windy", "Stormy", "Snowy"];
     return from int i in 1 ... days
         select {
-            condition: conditions[check random:createIntInRange(0, conditions.length() - 1)],
-            date: time:utcToString(time:utcAddSeconds(time:utcNow(), i * 86400)),
+            condition: conditions[check random:createIntInRange(
+                0, conditions.length() - 1)],
+            date: time:utcToString(
+                time:utcAddSeconds(time:utcNow(), i * 86400)),
             high: check random:createIntInRange(20, 30),
             low: check random:createIntInRange(10, 20),
             precipitationChance: check random:createIntInRange(10, 50),

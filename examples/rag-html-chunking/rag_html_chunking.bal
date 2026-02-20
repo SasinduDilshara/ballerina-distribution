@@ -5,7 +5,8 @@ import ballerina/io;
 final ai:VectorStore vectorStore = check new ai:InMemoryVectorStore();
 
 // Use the default embedding provider (configured via VS Code command).
-final ai:EmbeddingProvider embeddingProvider = check ai:getDefaultEmbeddingProvider();
+final ai:EmbeddingProvider embeddingProvider =
+    check ai:getDefaultEmbeddingProvider();
 
 // Create an HtmlChunker that splits HTML documents using the header structure.
 // By default it uses HTML_HEADER strategy, splitting at <h1>–<h6> header tags.

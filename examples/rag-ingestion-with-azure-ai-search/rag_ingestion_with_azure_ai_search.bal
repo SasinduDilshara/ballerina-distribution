@@ -15,7 +15,8 @@ configurable string azureSearchIndexName = ?;
 // Initialize the Azure OpenAI embedding provider.
 // Embeddings are used to convert document chunks into vectors for indexing.
 final azure:EmbeddingProvider embeddingProvider = check new (
-    azureOpenAiServiceUrl, azureOpenAiAccessToken, azureOpenAiApiVersion, embeddingDeploymentId
+    azureOpenAiServiceUrl, azureOpenAiAccessToken,
+    azureOpenAiApiVersion, embeddingDeploymentId
 );
 
 // Initialize the Azure AI Search knowledge base.

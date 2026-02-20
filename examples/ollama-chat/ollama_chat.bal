@@ -13,13 +13,17 @@ public function main() returns error? {
     // Because Ollama runs locally, no data leaves your machine.
     ai:ChatSystemMessage systemMessage = {
         role: ai:SYSTEM,
-        content: "You are a helpful writing assistant. Help users improve their writing while keeping their data private on their local machine."
+        content: "You are a helpful writing assistant. Help users " +
+                 "improve their writing while keeping their data " +
+                 "private on their local machine."
     };
 
     // First message: ask for a professional email draft.
     ai:ChatUserMessage userMessage1 = {
         role: ai:USER,
-        content: "I need to write an email to my team about postponing our Friday meeting to next Tuesday. Make it professional but friendly."
+        content: "I need to write an email to my team about " +
+                 "postponing our Friday meeting to next Tuesday. " +
+                 "Make it professional but friendly."
     };
 
     // Build conversation history.

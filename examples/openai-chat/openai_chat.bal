@@ -12,13 +12,15 @@ public function main() returns error? {
     // Define a system message that sets the assistant's behavior and persona.
     ai:ChatSystemMessage systemMessage = {
         role: ai:SYSTEM,
-        content: "You are a helpful customer support assistant for a software company. Be concise and professional."
+        content: "You are a helpful customer support assistant for a " +
+                 "software company. Be concise and professional."
     };
 
     // First user message asking about a product issue.
     ai:ChatUserMessage userMessage1 = {
         role: ai:USER,
-        content: "My application crashes when I try to upload files larger than 10MB. How can I fix this?"
+        content: "My application crashes when I try to upload files " +
+                 "larger than 10MB. How can I fix this?"
     };
 
     // Build the conversation history starting with the system context and first message.
