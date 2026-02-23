@@ -34,9 +34,8 @@ public function main() returns error? {
     io:println("Ingestion successful");
 
     // Querying process.
-    string query =
-        "How many annual leave days can a full-time employee " +
-        "carry forward to the next year?";
+    string query = string `How many annual leave days can a full-time employee
+        carry forward to the next year?`;
 
     ai:QueryMatch[] queryMatches = check knowledgeBase.retrieve(query, 10);
     ai:Chunk[] context = from ai:QueryMatch m in queryMatches select m.chunk;

@@ -13,9 +13,9 @@ public function main() returns error? {
     // Define a system message for a code review assistant.
     ai:ChatSystemMessage systemMessage = {
         role: ai:SYSTEM,
-        content: "You are an expert code reviewer. Provide concise, " +
-                 "actionable feedback on code quality, best practices, " +
-                 "and potential issues."
+        content: string `You are an expert code reviewer. Provide concise,
+            actionable feedback on code quality, best practices,
+            and potential issues.`
     };
 
     // First message: submit code for review.
@@ -40,8 +40,8 @@ def get_user(user_id):
     messages.push(response1);
     ai:ChatUserMessage userMessage2 = {
         role: ai:USER,
-        content: "Can you show me a corrected version that " +
-                 "addresses all the issues?"
+        content: string `Can you show me a corrected version that
+            addresses all the issues?`
     };
     messages.push(userMessage2);
 

@@ -51,8 +51,8 @@ public function main() returns error? {
     io:println("Answer: ", answer);
 
     string carryForwardQuery =
-        "How many annual leave days can a full-time employee " +
-        "carry forward to the next year?";
+        string `How many annual leave days can a full-time employee
+            carry forward to the next year?`;
 
     queryMatches = check knowledgeBase.retrieve(carryForwardQuery, 10);
     context = from ai:QueryMatch m in queryMatches select m.chunk;

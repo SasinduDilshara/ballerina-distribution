@@ -19,15 +19,15 @@ public function main() returns error? {
     // Define a system message that sets the assistant's persona.
     ai:ChatSystemMessage systemMessage = {
         role: ai:SYSTEM,
-        content: "You are a helpful HR assistant for a company. " +
-                 "Answer employee questions clearly and concisely."
+        content: string `You are a helpful HR assistant for a company.
+            Answer employee questions clearly and concisely.`
     };
 
     // First employee question about leave policy.
     ai:ChatUserMessage userMessage1 = {
         role: ai:USER,
-        content: "How many days of annual leave am I entitled " +
-                 "to as a full-time employee?"
+        content: string `How many days of annual leave am I entitled
+            to as a full-time employee?`
     };
 
     // Build the conversation history with the system context and first message.

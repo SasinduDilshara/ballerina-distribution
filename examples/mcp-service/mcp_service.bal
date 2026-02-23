@@ -41,9 +41,8 @@ service mcp:Service /mcp on mcpListener {
     # + return - Current weather data for the specified city
     remote function getCurrentWeather(string city) returns Weather|error {
         Weather mockWeather = check getMockWeather(city);
-        log:printInfo("Weather data retrieved for " + city + ": " +
-            mockWeather.condition + ", " +
-            mockWeather.temperature.toString() + "°C");
+        log:printInfo(string `Weather data retrieved for ${city}: ` +
+            string `${mockWeather.condition}, ${mockWeather.temperature}°C`);
         return mockWeather;
     };
 
@@ -58,8 +57,8 @@ service mcp:Service /mcp on mcpListener {
             forecast: check getMockForecastItems(days),
             location
         };
-        log:printInfo("Forecast generated for " + location + ": " +
-            days.toString() + " days with random data");
+        log:printInfo(string `Forecast generated for ${location}: ` +
+            string `${days} days with random data`);
         return mockForecast;
     }
 }

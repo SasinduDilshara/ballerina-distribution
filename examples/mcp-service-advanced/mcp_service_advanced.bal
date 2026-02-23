@@ -43,8 +43,8 @@ service mcp:AdvancedService /mcp on mcpListener {
                     "properties": {
                         "city": {
                             "type": "string",
-                            "description": "City name or coordinates " +
-                                "(e.g., 'London', '40.7128,-74.0060')"
+                            "description": string `City name or coordinates ` +
+                                string `(e.g., 'London', '40.7128,-74.0060')`
                         }
                     },
                     "required": ["city"]
@@ -58,8 +58,8 @@ service mcp:AdvancedService /mcp on mcpListener {
                     "properties": {
                         "city": {
                             "type": "string",
-                            "description": "City name or coordinates " +
-                                "(e.g., 'London', '40.7128,-74.0060')"
+                            "description": string `City name or coordinates ` +
+                                string `(e.g., 'London', '40.7128,-74.0060')`
                         },
                         "days": {
                             "type": "integer",
@@ -108,9 +108,8 @@ service mcp:AdvancedService /mcp on mcpListener {
 
 isolated function getCurrentWeather(string city) returns Weather|error {
     Weather mockWeather = check getMockWeather(city);
-    log:printInfo("Weather data retrieved for " + city + ": " +
-        mockWeather.condition + ", " +
-        mockWeather.temperature.toString() + "°C");
+    log:printInfo(string `Weather data retrieved for ${city}: ` +
+        string `${mockWeather.condition}, ${mockWeather.temperature}°C`);
     return mockWeather;
 }
 
@@ -120,8 +119,8 @@ isolated function getWeatherForecast(string location, int days)
         forecast: check getMockForecastItems(days),
         location
     };
-    log:printInfo("Forecast generated for " + location + ": " +
-        days.toString() + " days with random data");
+    log:printInfo(string `Forecast generated for ${location}: ` +
+        string `${days} days with random data`);
     return mockForecast;
 }
 

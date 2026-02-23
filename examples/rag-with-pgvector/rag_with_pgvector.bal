@@ -40,8 +40,8 @@ public function main() returns error? {
     io:println("Ingestion into PostgreSQL (pgvector) successful");
 
     // Query: retrieve the most relevant travel guide sections.
-    string query = "What are the must-visit places in Kyoto " +
-                   "and when is the best time to go?";
+    string query = string `What are the must-visit places in Kyoto
+        and when is the best time to go?`;
     ai:QueryMatch[] matches = check knowledgeBase.retrieve(query, 5);
     ai:Chunk[] context = from ai:QueryMatch m in matches select m.chunk;
 

@@ -42,8 +42,8 @@ final ai:ShortTermMemory memory = check new (
 final ai:Agent taskAgent = check new ({
     systemPrompt: {
         role: "Task Assistant",
-        instructions: "You are a helpful task management assistant. " +
-                      "Help users manage their to-do list."
+        instructions: string `You are a helpful task management assistant.
+            Help users manage their to-do list.`
     },
     tools: [addTask, listTasks],
     model: modelProvider,

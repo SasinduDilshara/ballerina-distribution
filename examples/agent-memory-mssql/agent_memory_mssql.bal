@@ -31,10 +31,10 @@ final ai:ModelProvider modelProvider = check ai:getDefaultModelProvider();
 final ai:Agent supportAgent = check new ({
     systemPrompt: {
         role: "Customer Support Agent",
-        instructions: "You are a friendly customer support agent for a " +
-                      "software company. Help customers resolve issues " +
-                      "concisely and professionally. Remember details " +
-                      "shared earlier in the conversation."
+        instructions: string `You are a friendly customer support agent for a
+            software company. Help customers resolve issues
+            concisely and professionally. Remember details
+            shared earlier in the conversation.`
     },
     tools: [],
     model: modelProvider,
@@ -48,16 +48,16 @@ public function main() returns error? {
 
     // First turn: customer describes their issue.
     string response1 = check supportAgent.run(
-        "Hi, my name is Sarah and I'm having trouble " +
-        "installing your desktop app on Windows 11.",
+        string `Hi, my name is Sarah and I'm having trouble
+            installing your desktop app on Windows 11.`,
         sessionId
     );
     io:println("Agent: ", response1);
 
     // Second turn: the agent recalls Sarah's name and OS from memory.
     string response2 = check supportAgent.run(
-        "I already tried reinstalling it twice but it still " +
-        "crashes on startup.",
+        string `I already tried reinstalling it twice but it still
+            crashes on startup.`,
         sessionId
     );
     io:println("Agent: ", response2);

@@ -39,8 +39,8 @@ final azure:OpenAiModelProvider chatModel = check new (
 
 public function main() returns error? {
     // Query 1: retrieve relevant chunks and generate an answer.
-    string query1 = "How many days of bereavement leave are " +
-                    "employees entitled to?";
+    string query1 = string `How many days of bereavement leave are
+        employees entitled to?`;
     ai:QueryMatch[] matches1 = check knowledgeBase.retrieve(query1, 5);
     ai:Chunk[] context1 = from ai:QueryMatch m in matches1 select m.chunk;
 
@@ -51,8 +51,8 @@ public function main() returns error? {
     io:println("Answer: ", answer1.content);
 
     // Query 2: demonstrate a second independent question against the same index.
-    string query2 = "What notice period is required before " +
-                    "taking maternity leave?";
+    string query2 = string `What notice period is required before
+        taking maternity leave?`;
     ai:QueryMatch[] matches2 = check knowledgeBase.retrieve(query2, 5);
     ai:Chunk[] context2 = from ai:QueryMatch m in matches2 select m.chunk;
 
