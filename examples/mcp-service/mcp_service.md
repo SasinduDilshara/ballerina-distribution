@@ -1,6 +1,6 @@
 # Model Context Protocol (MCP) service
 
-The Model Context Protocol (MCP) is a standard for connecting AI applications to external data sources, tools, and workflows (prompts). 
+The Model Context Protocol (MCP) is a standard for connecting AI applications to external data sources, tools, and workflows (prompts).
 
 Ballerina's MCP library allows you to create MCP servers that expose tools. Remote methods of a `mcp:Service` service declaration automatically become MCP tools that AI assistants can discover and call.
 

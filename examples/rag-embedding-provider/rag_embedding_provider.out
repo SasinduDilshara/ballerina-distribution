@@ -1,0 +1,5 @@
+$ bal run rag_embedding_provider.bal
+Embedding dimension: 1536
+Similarity with "How many days of vacation do I get?": 0.4902967745008488
+Similarity with "The quarterly sales report is due on Friday.": 0.10989803814815992
+Best match for 'vacation days': How many days of vacation do I get?

@@ -1,0 +1,4 @@
+$ bal run ai_agent_human_in_the_loop.bal
+Approval required to call 'issueRefund' with arguments {"amount":120.5, "orderId":"ORD-1001"}
+Approve? (y/n): y
+Agent: A full refund of $120.50 has been issued for your order ORD-1001.

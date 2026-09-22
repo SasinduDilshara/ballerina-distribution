@@ -1,0 +1,8 @@
+$ curl -k -u alice:alice@123 -X POST https://localhost:9093/mcp -H "Content-Type: application/json" -H "Accept: application/json, text/event-stream" -d '{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"getSalary","arguments":{"employeeId":"E-1001"}}}'
+{"jsonrpc":"2.0", "id":1, "result":{"content":[{"type":"text", "text":"{\"employeeId\":\"E-1001\",\"amount\":5000.00,\"currency\":\"USD\"}"}]}}
+
+$ curl -k -u bob:bob@123 -X POST https://localhost:9093/mcp -H "Content-Type: application/json" -H "Accept: application/json, text/event-stream" -d '{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"getSalary","arguments":{"employeeId":"E-1001"}}}'
+{"timestamp":"2026-09-21T09:55:36.833494Z", "status":403, "reason":"Forbidden", "message":"", "path":"/mcp", "method":"POST"}
+
+$ curl -k -X POST https://localhost:9093/mcp -H "Content-Type: application/json" -H "Accept: application/json, text/event-stream" -d '{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"getSalary","arguments":{"employeeId":"E-1001"}}}'
+{"timestamp":"2026-09-21T09:55:36.878472Z", "status":401, "reason":"Unauthorized", "message":"", "path":"/mcp", "method":"POST"}
