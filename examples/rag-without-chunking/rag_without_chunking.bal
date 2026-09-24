@@ -8,8 +8,8 @@ final ai:EmbeddingProvider embeddingProvider = check ai:getDefaultEmbeddingProvi
 // embedded and stored as a single chunk, without being split. This is useful when the documents
 // are already small and self-contained (e.g., FAQ entries, product descriptions, or tickets),
 // or when they have been chunked beforehand.
-final ai:KnowledgeBase knowledgeBase =
-        new ai:VectorKnowledgeBase(check new ai:InMemoryVectorStore(), embeddingProvider, ai:DISABLE);
+final ai:VectorStore vectorStore = check new ai:InMemoryVectorStore();
+final ai:KnowledgeBase knowledgeBase = new ai:VectorKnowledgeBase(vectorStore, embeddingProvider, ai:DISABLE);
 
 public function main() returns error? {
     // Each FAQ entry is a small, self-contained document.
@@ -23,9 +23,11 @@ public function main() returns error? {
     check knowledgeBase.ingest(faqs);
     io:println("Ingestion successful");
 
-    // Each match is a complete FAQ entry.
-    ai:QueryMatch[] matches = check knowledgeBase.retrieve("When is a doctor's note required?", 1);
-    foreach ai:QueryMatch queryMatch in matches {
-        io:println("Match: ", queryMatch.chunk.content, " (score: ", queryMatch.similarityScore, ")");
+    // Inspect what was stored: the number of entries equals the number of documents,
+    // and each entry is a complete FAQ entry.
+    ai:VectorMatch[] entries = check vectorStore.query({topK: -1});
+    io:println("Chunks stored: ", entries.length(), " (documents ingested: ", faqs.length(), ")");
+    foreach ai:VectorMatch entry in entries {
+        io:println("- ", entry.chunk.content);
     }
 }

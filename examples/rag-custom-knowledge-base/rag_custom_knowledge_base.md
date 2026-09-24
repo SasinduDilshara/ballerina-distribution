@@ -1,4 +1,4 @@
-# Custom knowledge base
+# Retrieve from a custom knowledge base
 
 The `ai:KnowledgeBase` type is the abstraction used for ingestion and retrieval in retrieval-augmented generation (RAG) workflows. Ballerina provides the `ai:VectorKnowledgeBase` implementation backed by a vector store and an embedding provider, and modules such as [ballerinax/ai.azure](https://central.ballerina.io/ballerinax/ai.azure/latest) provide implementations backed by managed search services (e.g., Azure AI Search).
 
@@ -16,6 +16,6 @@ For more information on the underlying module, see the [`ballerina/ai` module](h
 
 ## Related links
 
-- [The RAG with in-memory vector store example](/learn/by-example/rag-with-in-memory-vector-store/)
-- [The Vector search with metadata filters example](/learn/by-example/rag-query-with-metadata-filters/)
+- [The Retrieve from an in-memory vector store example](/learn/by-example/rag-in-memory-vector-store-retrieval/)
+- [The Filter results by metadata example](/learn/by-example/rag-query-with-metadata-filters/)
 - [The `ballerinax/ai.azure` module (Azure AI Search knowledge base)](https://central.ballerina.io/ballerinax/ai.azure/latest)

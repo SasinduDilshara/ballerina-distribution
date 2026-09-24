@@ -1,4 +1,4 @@
-# Document loading for retrieval-augmented generation (RAG)
+# Load documents for retrieval-augmented generation (RAG)
 
 Loading source documents is the first step of a retrieval-augmented generation (RAG) ingestion workflow. Ballerina provides the `ai:DataLoader` abstraction to load documents from various sources as `ai:Document` values, which can then be chunked, embedded, and indexed in a knowledge base.
 
@@ -16,6 +16,6 @@ For more information on the underlying module, see the [`ballerina/ai` module](h
 
 - [Sample employee handbook document](https://github.com/ballerina-platform/ballerina-distribution/tree/master/examples/rag-document-loading/employee_handbook.md)
 - [Sample leave policy document](https://github.com/ballerina-platform/ballerina-distribution/tree/master/examples/rag-document-loading/leave_policy.pdf)
-- [The Document chunking example](/learn/by-example/rag-document-chunking/)
-- [The RAG ingestion with external vector store example](/learn/by-example/rag-ingestion-with-external-vector-store/)
+- [The Chunk documents example](/learn/by-example/rag-document-chunking/)
+- [The Ingest into Pinecone example](/learn/by-example/rag-ingestion-with-external-vector-store/)
 - [The `ballerinax/ai.microsoft.sharepoint` module](https://central.ballerina.io/ballerinax/ai.microsoft.sharepoint/latest)

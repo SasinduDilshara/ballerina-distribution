@@ -1,4 +1,4 @@
-# Document chunking for retrieval-augmented generation (RAG)
+# Chunk documents
 
 Documents are split into smaller chunks before they are embedded and indexed for retrieval-augmented generation (RAG). The `ai:Chunker` abstraction has implementations for Markdown (`ai:MarkdownChunker`), HTML (`ai:HtmlChunker`), and generic text (`ai:GenericRecursiveChunker`) documents. Each chunker uses the structure of the document type to produce meaningful chunks and recursively falls back to smaller units when a chunk exceeds the maximum size.
 
@@ -12,6 +12,6 @@ For more information on the underlying module, see the [`ballerina/ai` module](h
 
 ## Related links
 
-- [The Document loading example](/learn/by-example/rag-document-loading/)
-- [The RAG ingestion with external vector store example](/learn/by-example/rag-ingestion-with-external-vector-store/)
-- [The Vector search with metadata filters example](/learn/by-example/rag-query-with-metadata-filters/)
+- [The Load documents example](/learn/by-example/rag-document-loading/)
+- [The Ingest into Pinecone example](/learn/by-example/rag-ingestion-with-external-vector-store/)
+- [The Filter results by metadata example](/learn/by-example/rag-query-with-metadata-filters/)

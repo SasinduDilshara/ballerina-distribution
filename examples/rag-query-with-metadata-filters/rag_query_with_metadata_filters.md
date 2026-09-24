@@ -1,4 +1,4 @@
-# Vector search with metadata filters
+# Filter results by metadata
 
 Chunks stored in a knowledge base carry metadata (`ai:Metadata`) with predefined fields, such as the file name and chunk index, and arbitrary custom fields. Metadata filters (`ai:MetadataFilters`) combine vector similarity search with exact conditions on this metadata, for example, to restrict retrieval to a department, a document, or a time range, which improves precision and enables multi-tenant scenarios.
 
@@ -16,6 +16,6 @@ For more information on the underlying module, see the [`ballerina/ai` module](h
 
 ## Related links
 
-- [The RAG with in-memory vector store example](/learn/by-example/rag-with-in-memory-vector-store/)
-- [The RAG query with external vector store example](/learn/by-example/rag-query-with-external-vector-store/)
-- [The Document chunking example](/learn/by-example/rag-document-chunking/)
+- [The Retrieve from an in-memory vector store example](/learn/by-example/rag-in-memory-vector-store-retrieval/)
+- [The Retrieve from Pinecone example](/learn/by-example/rag-query-with-external-vector-store/)
+- [The Chunk documents example](/learn/by-example/rag-document-chunking/)

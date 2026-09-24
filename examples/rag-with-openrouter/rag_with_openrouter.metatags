@@ -1,2 +1,0 @@
-description: This BBE demonstrates retrieval-augmented generation (RAG) using OpenRouter for embeddings and LLM calls.
-keywords: ballerina, ballerina by example, BBE, ai, llm, rag, openrouter

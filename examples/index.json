@@ -5806,176 +5806,8 @@
     ]
   },
   {
-    "title": "Retrieval-augmented generation (RAG)",
-    "column": 1,
-    "category": "Generative AI",
-    "samples": [
-      {
-        "name": "RAG with in-memory vector store",
-        "url": "rag-with-in-memory-vector-store",
-        "verifyBuild": true,
-        "verifyOutput": false,
-        "disableVerificationReason": "Requires keys",
-        "disablePlayground": true,
-        "needCentral": false
-      },
-      {
-        "name": "RAG ingestion with external vector store",
-        "url": "rag-ingestion-with-external-vector-store",
-        "verifyBuild": true,
-        "verifyOutput": false,
-        "disableVerificationReason": "Requires keys",
-        "disablePlayground": true,
-        "needCentral": true
-      },
-      {
-        "name": "RAG query with external vector store",
-        "url": "rag-query-with-external-vector-store",
-        "verifyBuild": true,
-        "verifyOutput": false,
-        "disableVerificationReason": "Requires keys and the output is not fixed",
-        "disablePlayground": true,
-        "needCentral": true
-      },
-      {
-        "name": "Agentic RAG with Pinecone vector store",
-        "url": "agentic-rag-with-pinecone-vector-store",
-        "verifyBuild": true,
-        "verifyOutput": false,
-        "disableVerificationReason": "Requires keys and a Pinecone index",
-        "disablePlayground": true,
-        "needCentral": true
-      },
-      {
-        "name": "Agentic RAG with WSO2 Integration knowledge base",
-        "url": "agentic-rag-with-wso2-integration-knowledge-base",
-        "verifyBuild": true,
-        "verifyOutput": false,
-        "disableVerificationReason": "Requires a WSO2 Integration knowledge base and keys",
-        "disablePlayground": true,
-        "needCentral": true
-      },
-      {
-        "name": "Document loading",
-        "url": "rag-document-loading",
-        "verifyBuild": true,
-        "verifyOutput": false,
-        "disableVerificationReason": "Depends on the sample documents",
-        "disablePlayground": true,
-        "needCentral": false
-      },
-      {
-        "name": "Document chunking",
-        "url": "rag-document-chunking",
-        "verifyBuild": true,
-        "verifyOutput": true,
-        "disablePlayground": true,
-        "needCentral": false
-      },
-      {
-        "name": "RAG with a custom chunker",
-        "url": "rag-with-custom-chunker",
-        "verifyBuild": true,
-        "verifyOutput": false,
-        "disableVerificationReason": "Requires keys and the output is not fixed",
-        "disablePlayground": true,
-        "needCentral": false
-      },
-      {
-        "name": "RAG without chunking",
-        "url": "rag-without-chunking",
-        "verifyBuild": true,
-        "verifyOutput": false,
-        "disableVerificationReason": "Requires keys and the output is not fixed",
-        "disablePlayground": true,
-        "needCentral": false
-      },
-      {
-        "name": "Embeddings",
-        "url": "rag-embeddings",
-        "verifyBuild": true,
-        "verifyOutput": false,
-        "disableVerificationReason": "Requires keys and the output is not fixed",
-        "disablePlayground": true,
-        "needCentral": false
-      },
-      {
-        "name": "Embeddings with a specific embedding provider",
-        "url": "rag-embedding-provider",
-        "verifyBuild": true,
-        "verifyOutput": false,
-        "disableVerificationReason": "Requires keys and the output is not fixed",
-        "disablePlayground": true,
-        "needCentral": true
-      },
-      {
-        "name": "RAG with pgvector vector store",
-        "url": "rag-with-pgvector-vector-store",
-        "verifyBuild": true,
-        "verifyOutput": false,
-        "disableVerificationReason": "Requires keys and a PostgreSQL database",
-        "disablePlayground": true,
-        "needCentral": true
-      },
-      {
-        "name": "RAG with Pinecone vector store",
-        "url": "rag-with-pinecone-vector-store",
-        "verifyBuild": true,
-        "verifyOutput": false,
-        "disableVerificationReason": "Requires keys and a Pinecone index",
-        "disablePlayground": true,
-        "needCentral": true
-      },
-      {
-        "name": "RAG with Azure AI Search knowledge base",
-        "url": "rag-with-azure-ai-search-knowledge-base",
-        "verifyBuild": true,
-        "verifyOutput": false,
-        "disableVerificationReason": "Requires keys and an Azure AI Search service",
-        "disablePlayground": true,
-        "needCentral": true
-      },
-      {
-        "name": "RAG with Google Vertex AI",
-        "url": "rag-with-vertex-ai",
-        "verifyBuild": true,
-        "verifyOutput": false,
-        "disableVerificationReason": "Requires Google Cloud credentials and the output is not fixed",
-        "disablePlayground": true,
-        "needCentral": true
-      },
-      {
-        "name": "RAG with OpenRouter",
-        "url": "rag-with-openrouter",
-        "verifyBuild": true,
-        "verifyOutput": false,
-        "disableVerificationReason": "Requires keys and the output is not fixed",
-        "disablePlayground": true,
-        "needCentral": true
-      },
-      {
-        "name": "Vector search with metadata filters",
-        "url": "rag-query-with-metadata-filters",
-        "verifyBuild": true,
-        "verifyOutput": false,
-        "disableVerificationReason": "Requires keys and the output is not fixed",
-        "disablePlayground": true,
-        "needCentral": false
-      },
-      {
-        "name": "Custom knowledge base",
-        "url": "rag-custom-knowledge-base",
-        "verifyBuild": true,
-        "verifyOutput": false,
-        "disableVerificationReason": "Requires keys and the output is not fixed",
-        "disablePlayground": true,
-        "needCentral": false
-      }
-    ]
-  },
-  {
     "title": "Model context protocol (MCP)",
-    "column": 1,
+    "column": 0,
     "category": "Generative AI",
     "samples": [
       {
@@ -6032,7 +5864,7 @@
   },
   {
     "title": "AI agents",
-    "column": 2,
+    "column": 1,
     "category": "Generative AI",
     "samples": [
       {
@@ -6189,13 +6021,283 @@
         "needCentral": true
       },
       {
-        "name": "Agent from an AFM definition",
+        "name": "Deploy an agent from an AFM file",
         "url": "ai-agent-from-afm",
+        "verifyBuild": false,
+        "verifyOutput": false,
+        "disableVerificationReason": "Contains no Ballerina code; the agent is defined in an AFM file and run by an interpreter",
+        "disablePlayground": true,
+        "needCentral": false
+      }
+    ]
+  },
+  {
+    "title": "RAG fundamentals",
+    "category": "Generative AI",
+    "column": 2,
+    "samples": [
+      {
+        "name": "Load documents",
+        "url": "rag-document-loading",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Depends on the sample documents",
+        "disablePlayground": true,
+        "needCentral": false
+      },
+      {
+        "name": "Load documents from multiple sources",
+        "url": "rag-document-sources",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Depends on the sample documents",
+        "disablePlayground": true,
+        "needCentral": false
+      },
+      {
+        "name": "Chunk documents",
+        "url": "rag-document-chunking",
+        "verifyBuild": true,
+        "verifyOutput": true,
+        "disablePlayground": true,
+        "needCentral": false
+      },
+      {
+        "name": "Implement a custom chunker",
+        "url": "rag-with-custom-chunker",
         "verifyBuild": true,
         "verifyOutput": false,
         "disableVerificationReason": "Requires keys and the output is not fixed",
         "disablePlayground": true,
         "needCentral": false
+      },
+      {
+        "name": "Generate embeddings",
+        "url": "rag-embeddings",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the output is not fixed",
+        "disablePlayground": true,
+        "needCentral": false
+      },
+      {
+        "name": "Generate embeddings with a specific provider",
+        "url": "rag-embedding-provider",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the output is not fixed",
+        "disablePlayground": true,
+        "needCentral": true
+      },
+      {
+        "name": "Vector store operations",
+        "url": "rag-vector-store-operations",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the output is not fixed",
+        "disablePlayground": true,
+        "needCentral": false
+      },
+      {
+        "name": "Augment the prompt with retrieved context",
+        "url": "rag-augment-prompt",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the output is not fixed",
+        "disablePlayground": true,
+        "needCentral": false
+      }
+    ]
+  },
+  {
+    "title": "RAG with knowledge bases: ingestion",
+    "category": "Generative AI",
+    "column": 2,
+    "samples": [
+      {
+        "name": "Ingest into an in-memory vector store",
+        "url": "rag-in-memory-vector-store-ingestion",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys",
+        "disablePlayground": true,
+        "needCentral": false
+      },
+      {
+        "name": "Ingest without chunking",
+        "url": "rag-without-chunking",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the output is not fixed",
+        "disablePlayground": true,
+        "needCentral": false
+      },
+      {
+        "name": "Ingest with a configured chunker",
+        "url": "rag-with-configured-chunker",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the output is not fixed",
+        "disablePlayground": true,
+        "needCentral": false
+      },
+      {
+        "name": "Ingest into Pinecone",
+        "url": "rag-ingestion-with-external-vector-store",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys",
+        "disablePlayground": true,
+        "needCentral": true
+      },
+      {
+        "name": "Ingest into pgvector",
+        "url": "rag-pgvector-ingestion",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and a PostgreSQL database",
+        "disablePlayground": true,
+        "needCentral": true
+      },
+      {
+        "name": "Ingest into Azure AI Search",
+        "url": "rag-azure-ai-search-ingestion",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and an Azure AI Search service",
+        "disablePlayground": true,
+        "needCentral": true
+      },
+      {
+        "name": "Ingest with Google Vertex AI embeddings",
+        "url": "rag-vertex-ai-ingestion",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires Google Cloud credentials",
+        "disablePlayground": true,
+        "needCentral": true
+      },
+      {
+        "name": "Ingest with OpenRouter embeddings",
+        "url": "rag-openrouter-ingestion",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys",
+        "disablePlayground": true,
+        "needCentral": true
+      }
+    ]
+  },
+  {
+    "title": "RAG with knowledge bases: retrieval and generation",
+    "category": "Generative AI",
+    "column": 3,
+    "samples": [
+      {
+        "name": "Retrieve from an in-memory vector store",
+        "url": "rag-in-memory-vector-store-retrieval",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the output is not fixed",
+        "disablePlayground": true,
+        "needCentral": false
+      },
+      {
+        "name": "Retrieve from Pinecone",
+        "url": "rag-query-with-external-vector-store",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the output is not fixed",
+        "disablePlayground": true,
+        "needCentral": true
+      },
+      {
+        "name": "Retrieve from pgvector",
+        "url": "rag-pgvector-retrieval",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and a PostgreSQL database",
+        "disablePlayground": true,
+        "needCentral": true
+      },
+      {
+        "name": "Retrieve from Azure AI Search",
+        "url": "rag-azure-ai-search-retrieval",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and an Azure AI Search service",
+        "disablePlayground": true,
+        "needCentral": true
+      },
+      {
+        "name": "Retrieve from a WSO2 Cloud knowledge base",
+        "url": "rag-wso2-cloud-knowledge-base-retrieval",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires a WSO2 Integration platform knowledge base and access token",
+        "disablePlayground": true,
+        "needCentral": true
+      },
+      {
+        "name": "Retrieve and generate with Google Vertex AI",
+        "url": "rag-vertex-ai-retrieval",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires Google Cloud credentials and the output is not fixed",
+        "disablePlayground": true,
+        "needCentral": true
+      },
+      {
+        "name": "Retrieve and generate with OpenRouter",
+        "url": "rag-openrouter-retrieval",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the output is not fixed",
+        "disablePlayground": true,
+        "needCentral": true
+      },
+      {
+        "name": "Filter results by metadata",
+        "url": "rag-query-with-metadata-filters",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the output is not fixed",
+        "disablePlayground": true,
+        "needCentral": false
+      },
+      {
+        "name": "Retrieve from a custom knowledge base",
+        "url": "rag-custom-knowledge-base",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the output is not fixed",
+        "disablePlayground": true,
+        "needCentral": false
+      }
+    ]
+  },
+  {
+    "title": "Agentic RAG",
+    "column": 3,
+    "category": "Generative AI",
+    "samples": [
+      {
+        "name": "Agentic RAG with WSO2 Cloud",
+        "url": "agentic-rag-with-wso2-integration-knowledge-base",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires a WSO2 Integration knowledge base and keys",
+        "disablePlayground": true,
+        "needCentral": true
+      },
+      {
+        "name": "Agentic RAG with Pinecone",
+        "url": "agentic-rag-with-pinecone-vector-store",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and a Pinecone index",
+        "disablePlayground": true,
+        "needCentral": true
       }
     ]
   },

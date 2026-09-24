@@ -1,2 +1,0 @@
-description: This BBE demonstrates retrieval-augmented generation (RAG) using the Pinecone vector store with automatic chunking.
-keywords: ballerina, ballerina by example, BBE, ai, llm, rag, vector store, pinecone, chunker

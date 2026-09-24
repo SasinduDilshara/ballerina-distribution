@@ -1,39 +1,55 @@
 import ballerina/ai;
 import ballerina/io;
 
-// Use the default embedding provider (with configuration added via a Ballerina VS Code command).
-final ai:EmbeddingProvider embeddingProvider = check ai:getDefaultEmbeddingProvider();
+// A custom chunker that implements the `ai:Chunker` type. The built-in chunkers split by
+// structure or size; this chunker understands the FAQ format of the document and produces
+// one chunk per question-and-answer pair, so that a retrieved chunk is always a complete FAQ
+// entry. The question is kept as metadata for filtering and display.
+isolated class FaqChunker {
+    *ai:Chunker;
 
-// Define the chunker to use when documents are ingested. Instead of the default `ai:AUTO`
-// configuration, which selects a chunker based on the document type, this example uses a
-// generic recursive chunker that splits by sentences into chunks of at most 120 characters,
-// with an overlap of 20 characters between consecutive chunks to preserve context.
-final ai:Chunker chunker = new ai:GenericRecursiveChunker(maxChunkSize = 120, maxOverlapSize = 20,
-        strategy = ai:SENTENCE);
-
-// Create the knowledge base with the in-memory vector store, the embedding provider,
-// and the custom chunker. Any `ai:Chunker` implementation, including your own, can be used.
-final ai:KnowledgeBase knowledgeBase =
-        new ai:VectorKnowledgeBase(check new ai:InMemoryVectorStore(), embeddingProvider, chunker);
+    public isolated function chunk(ai:Document document) returns ai:Chunk[]|ai:Error {
+        if document !is ai:TextDocument {
+            return error ai:Error("Only text documents are supported");
+        }
+        ai:TextChunk[] chunks = [];
+        // Each FAQ entry starts with "Q:" on a new line.
+        foreach string entry in re `\nQ:`.split("\n" + document.content.trim()) {
+            string trimmedEntry = entry.trim();
+            if trimmedEntry == "" {
+                continue;
+            }
+            string[] parts = re `\nA:`.split(trimmedEntry);
+            ai:Metadata metadata = document.metadata.clone() ?: {};
+            metadata["question"] = parts[0].trim();
+            metadata.index = chunks.length();
+            chunks.push({content: "Q: " + trimmedEntry, metadata});
+        }
+        return chunks;
+    }
+}
 
 public function main() returns error? {
-    ai:TextDocument policy = {
-        metadata: {fileName: "leave_policy.txt"},
-        content: string `Full-time employees are entitled to 20 days of paid annual leave per year.
-Leave requests must be submitted at least one week in advance.
-Employees are entitled to 10 days of paid sick leave per year.
-A medical certificate is required for absences longer than two consecutive days.
-Parental leave is 12 weeks and must be requested one month in advance.`
+    ai:TextDocument faq = {
+        metadata: {fileName: "hr_faq.txt"},
+        content: string `Q: How many days of annual leave do I get?
+A: Full-time employees get 20 days of paid annual leave per year.
+Q: Do I need a medical certificate for sick leave?
+A: Only for absences longer than two consecutive days.
+Q: How do I submit an expense report?
+A: Submit it through the finance portal within 30 days of the expense.`
     };
 
-    // The document is split by the custom chunker before the chunks are embedded and stored.
-    check knowledgeBase.ingest(policy);
-    io:println("Ingestion successful");
-
-    // Retrieve the most relevant chunks for a query. The results are the sentence-based
-    // chunks produced by the custom chunker.
-    ai:QueryMatch[] matches = check knowledgeBase.retrieve("Do I need a medical certificate?", 2);
-    foreach ai:QueryMatch queryMatch in matches {
-        io:println("Match: ", queryMatch.chunk.content, " (score: ", queryMatch.similarityScore, ")");
+    // Use the custom chunker like any built-in chunker.
+    ai:Chunker chunker = new FaqChunker();
+    ai:Chunk[] chunks = check chunker.chunk(faq);
+    io:println("Chunks produced: ", chunks.length());
+    foreach ai:Chunk chunk in chunks {
+        io:println("[", chunk.metadata?.index, "] question: ", chunk.metadata["question"]);
+        io:println("    ", chunk.content);
     }
+
+    // A custom chunker can also be passed to a knowledge base, so that the documents are
+    // chunked with it during ingestion:
+    // `new ai:VectorKnowledgeBase(vectorStore, embeddingProvider, new FaqChunker())`.
 }

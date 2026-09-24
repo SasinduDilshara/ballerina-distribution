@@ -1,4 +1,4 @@
-# Agentic RAG with WSO2 Integration knowledge base
+# Agentic retrieval-augmented generation (RAG) with WSO2 Cloud
 
 The `ballerinax/ai.wso2.integration` module provides `wso2:CloudKnowledgeBase`, an `ai:KnowledgeBase` implementation backed by a knowledge base hosted on the WSO2 Integration platform. The documents are ingested and indexed on the platform, so the application only retrieves from it. Calls to `ingest` and `deleteByFilter` return an error.
 
@@ -13,6 +13,7 @@ For more information on the underlying module, see the [`ballerinax/ai.wso2.inte
 ::: code agentic_rag_with_wso2_integration_knowledge_base.bal :::
 
 ## Related links
-- [The Agentic RAG with Pinecone vector store example](/learn/by-example/agentic-rag-with-pinecone-vector-store/)
-- [The Custom knowledge base example](/learn/by-example/rag-custom-knowledge-base/)
+- [The Retrieve from a WSO2 Cloud knowledge base example](/learn/by-example/rag-wso2-cloud-knowledge-base-retrieval/)
+- [The Agentic RAG with Pinecone example](/learn/by-example/agentic-rag-with-pinecone-vector-store/)
+- [The Retrieve from a custom knowledge base example](/learn/by-example/rag-custom-knowledge-base/)
 - [The `ballerinax/ai.wso2.integration` module](https://central.ballerina.io/ballerinax/ai.wso2.integration/latest)

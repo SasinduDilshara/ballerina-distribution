@@ -1,3 +1,0 @@
-$ bal run ai_agent_from_afm.bal
-Agent: Math Tutor
-To find the area of a circle, you can use the formula A = πr², where A is the area and r is the radius. In this case, the radius (r) is 3, so you square it to get 3² = 9. Then, multiply 9 by π (approximately 3.14) to get the area, which is about 28.26 square units.
