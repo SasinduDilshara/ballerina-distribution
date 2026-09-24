@@ -1,8 +1,8 @@
 # Model Context Protocol (MCP) tools with HTTP request binding
 
-MCP tools defined as remote methods of an `mcp:Service` receive only the arguments provided by the AI client. When an MCP server is exposed over the Streamable HTTP transport, tools often need information from the underlying HTTP request too, such as tenant identifiers, correlation IDs, or authorization headers set by a gateway.
+MCP tools defined as remote methods of an `mcp:StreamableHttpService` receive the arguments provided by the AI client. Tools often need information from the underlying HTTP request too, such as tenant identifiers, correlation IDs, or authorization headers set by a gateway.
 
-Declaring the service with the `mcp:StreamableHttpService` type allows tool remote methods to additionally bind HTTP request information: an `http:Headers` parameter, an `http:Request` parameter, or `@http:Header` annotated parameters. These parameters are excluded from the tool's input schema, so they are never provided by the AI client and are instead populated from the incoming request.
+Tool remote methods can additionally bind HTTP request information: an `http:Headers` parameter, an `http:Request` parameter, or `@http:Header` annotated parameters. These parameters are excluded from the tool's input schema, so they are never provided by the AI client and are instead populated from the incoming request.
 
 This example demonstrates an MCP server whose tools use the `x-tenant-id` HTTP header to scope the data returned to the tenant making the request.
 

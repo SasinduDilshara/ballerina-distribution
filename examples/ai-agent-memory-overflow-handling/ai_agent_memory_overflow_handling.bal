@@ -1,51 +1,56 @@
 import ballerina/ai;
 import ballerina/io;
 
-// Use the default model provider (with configuration added via a Ballerina VS Code command).
 final ai:ModelProvider model = check ai:getDefaultModelProvider();
 
-// Short-term memory retains a fixed number of messages per session. When the capacity is
-// reached, the overflow handler decides what happens to the oldest messages.
-// The default strategy trims the oldest messages. Here, the two oldest messages are trimmed
-// whenever adding a message would exceed the capacity of the store (6 messages).
-final ai:ShortTermMemory trimmingMemory = check new (check new ai:InMemoryShortTermMemoryStore(6),
-        <ai:TrimOverflowHandlerConfiguration>{trimCount: 2});
-
-// Alternatively, the model-assisted strategy uses an LLM to summarize the older messages
-// into a single message, so the context is retained in a condensed form instead of being lost.
-final ai:ShortTermMemory summarizingMemory = check new (check new ai:InMemoryShortTermMemoryStore(6),
+// Short-term memory retains a fixed number of messages per session. When adding a message
+// would exceed the capacity, the overflow handler decides what happens to the oldest messages:
+// - `ai:TrimOverflowHandlerConfiguration` (the default) removes the oldest messages,
+//   e.g., `<ai:TrimOverflowHandlerConfiguration>{trimCount: 2}`.
+// - `ai:ModelAssistedOverflowHandlerConfiguration` summarizes the older messages with an LLM
+//   into a single message, so their context is retained in condensed form.
+final ai:Memory memory = check new ai:ShortTermMemory(check new ai:InMemoryShortTermMemoryStore(6),
         <ai:ModelAssistedOverflowHandlerConfiguration>{model});
 
-final string[] userMessages = [
-    "My name is Nadia and I live in Lisbon.",
-    "I have a cat called Milo.",
-    "I work as a marine biologist.",
-    "What do you know about me? Answer in one sentence."
-];
-
-function runConversation(ai:Memory memory, string sessionId) returns error? {
-    ai:Agent agent = check new ({
-        systemPrompt: {
-            role: "Personal Assistant",
-            instructions: "You are a friendly assistant. Keep answers to one sentence."
-        },
-        model,
-        memory
-    });
-    foreach string userMessage in userMessages {
-        string response = check agent.run(userMessage, sessionId);
-        io:println("Agent: ", response);
-    }
-    // Inspect the messages retained in memory after the conversation.
-    ai:ChatMessage[] messages = check memory.get(sessionId);
-    io:println("Messages retained: ", messages.length(), " (roles: ",
-            messages.map(message => message.role.toString()), ")");
-}
+final ai:Agent assistant = check new ({
+    systemPrompt: {
+        role: "Personal Assistant",
+        instructions: string `You are a friendly assistant. Remember the details the user
+            shares and use them in later answers. Keep answers to one sentence.`
+    },
+    model,
+    memory
+});
 
 public function main() returns error? {
-    io:println("--- Trimming on overflow ---");
-    check runConversation(trimmingMemory, "session-trim");
+    string sessionId = "user-1";
+    string response = check assistant.run("My name is Nadia and I live in Lisbon.", sessionId);
+    io:println(response);
+    response = check assistant.run("I have a cat called Milo.", sessionId);
+    io:println(response);
 
-    io:println("\n--- Summarizing on overflow ---");
-    check runConversation(summarizingMemory, "session-summarize");
+    response = check assistant.run("I work as a marine biologist.", sessionId);
+    io:println(response);
+
+    // The three turns produced 7 messages, which exceeds the capacity of the store.
+    ai:ChatMessage[] messages = check memory.get(sessionId);
+    printMemory(messages);
+
+    // The overflow handler runs before the messages of this turn are added, and replaces the
+    // messages above with a single summary. The agent can still use the earlier context,
+    // even though the original messages are no longer in memory.
+    response = check assistant.run("What do you know about me?", sessionId);
+    io:println(response);
+
+    messages = check memory.get(sessionId);
+    printMemory(messages);
+}
+
+function printMemory(ai:ChatMessage[] messages) {
+    io:println("\nMessages in memory: ", messages.length(),
+            " ", messages.map(message => message.role.toString()));
+    ai:ChatMessage summary = messages[1];
+    if summary is ai:ChatAssistantMessage {
+        io:println("Summary: ", summary.content, "\n");
+    }
 }

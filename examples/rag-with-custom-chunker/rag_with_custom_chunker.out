@@ -1,0 +1,4 @@
+$ bal run rag_with_custom_chunker.bal
+Ingestion successful
+Match: A medical certificate is required for absences longer than two consecutive days. (score: 0.5636989730449635)
+Match: Leave requests must be submitted at least one week in advance. (score: 0.19315014031499336)

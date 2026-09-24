@@ -25,12 +25,12 @@ isolated function getOrder(string orderId) returns Order|error {
     }
 }
 
+// Mark the tool as requiring human approval. The agent pauses before calling this tool
+// and resumes only after a human approves or rejects the proposed call.
 # Issues a refund for an order. This action is irreversible.
 # + orderId - The order ID
 # + amount - The amount to refund
 # + return - A confirmation message, or an error if the order is not found
-// Mark the tool as requiring human approval. The agent pauses before calling this tool
-// and resumes only after a human approves or rejects the proposed call.
 @ai:AgentTool {requiresApproval: true}
 isolated function issueRefund(string orderId, decimal amount) returns string|error {
     lock {

@@ -27,7 +27,10 @@ final ai:EmbeddingProvider embeddingProvider = check ai:getDefaultEmbeddingProvi
 final ai:ModelProvider model = check ai:getDefaultModelProvider();
 
 // Create the knowledge base with the vector store and embedding provider.
-final ai:KnowledgeBase knowledgeBase = new ai:VectorKnowledgeBase(vectorStore, embeddingProvider);
+// The chunker argument is optional and defaults to `ai:AUTO`, which selects a chunker based
+// on the type of each ingested document (e.g., Markdown, HTML, or generic text). Pass a specific
+// `ai:Chunker` for finer control, or `ai:DISABLE` to store each document as a single chunk.
+final ai:KnowledgeBase knowledgeBase = new ai:VectorKnowledgeBase(vectorStore, embeddingProvider, ai:AUTO);
 
 public function main() returns error? {
     // Ingest documents into the knowledge base. The chunks are embedded and

@@ -1,8 +1,5 @@
 $ bal run ai_agent_persistent_memory.bal
-No previous conversation found. Starting a new conversation.
-I can help with that! Let me check the status of your order ORD-7781. Could you please confirm your shipping address?
-Your order number is ORD-7781. Would you like me to check the status for you?
+I can help you with that! Let me check the status of your order, ORD-7781. Please hold on for a moment.
+Your order number is ORD-7781.
 
-$ bal run ai_agent_persistent_memory.bal
-Continuing the conversation from 5 stored messages.
-Your order number is ORD-7781. How can I assist you further with it?
+Messages stored for session 'customer-42': 5 ["system","user","assistant","user","assistant"]

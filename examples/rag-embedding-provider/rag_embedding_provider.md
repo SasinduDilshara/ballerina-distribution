@@ -2,9 +2,9 @@
 
 An embedding provider (`ai:EmbeddingProvider`) converts text chunks into vector embeddings, so that semantically similar text can be found using vector similarity search. Embedding providers are used in retrieval-augmented generation (RAG) both when ingesting documents and when retrieving relevant chunks for a query.
 
-The `ai:EmbeddingProvider` type is a unified abstraction implemented by provider-specific modules such as [ballerinax/ai.openai](https://central.ballerina.io/ballerinax/ai.openai/latest) and [ballerinax/ai.azure](https://central.ballerina.io/ballerinax/ai.azure/latest), so the same code works across providers. The default embedding provider (`ai:getDefaultEmbeddingProvider()`) can be used without managing keys.
+The `ai:EmbeddingProvider` type is a unified abstraction implemented by provider-specific modules such as [ballerinax/ai.openai](https://central.ballerina.io/ballerinax/ai.openai/latest), [ballerinax/ai.azure](https://central.ballerina.io/ballerinax/ai.azure/latest), [ballerinax/ai.googleapis.vertex](https://central.ballerina.io/ballerinax/ai.googleapis.vertex/latest), and [ballerinax/ai.openrouter](https://central.ballerina.io/ballerinax/ai.openrouter/latest), so the same code works across providers. The default embedding provider (`ai:getDefaultEmbeddingProvider()`) can be used without managing keys.
 
-This example demonstrates how to initialize a specific embedding provider with your own API key, embed single and multiple chunks, compare embeddings, and use the provider with a knowledge base.
+This example demonstrates how to initialize a specific embedding provider with your own API key, embed a document and a batch of candidate texts, and compare the similarity of each candidate with the document. To use embeddings in a knowledge base for RAG, see the [RAG with in-memory vector store](/learn/by-example/rag-with-in-memory-vector-store/) example.
 
 > Note: Add the API key to the `Config.toml` file (e.g., `openAiApiKey = "<your-api-key>"`). Never commit API keys to source control.
 
@@ -16,6 +16,7 @@ For more information on the underlying module, see the [`ballerina/ai` module](h
 
 ## Related links
 
+- [The Embeddings example](/learn/by-example/rag-embeddings/)
 - [The RAG with in-memory vector store example](/learn/by-example/rag-with-in-memory-vector-store/)
 - [The RAG ingestion with external vector store example](/learn/by-example/rag-ingestion-with-external-vector-store/)
 - [The `ballerinax/ai.openai` module](https://central.ballerina.io/ballerinax/ai.openai/latest)

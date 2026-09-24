@@ -17,16 +17,25 @@ listener mcp:StreamableHttpListener securedListener = new (9093,
     }
 );
 
-// Secure the MCP service with basic authentication using the file user store and
-// enforce authorization with scopes. The `httpConfig` field accepts the same
-// configuration as the `@http:ServiceConfig` annotation, so JWT or OAuth2
-// authentication can be configured in the same way.
+// Secure the MCP service with JWT authentication and enforce authorization with scopes.
+// The JWT sent in the `Authorization` header is validated against the issuer, the audience,
+// and the signature (using the public certificate), and the scopes in the `scp` claim are
+// checked against the `scopes` field. The `httpConfig` field accepts the same configuration
+// as the `@http:ServiceConfig` annotation, so basic authentication (file or LDAP user store)
+// and OAuth2 introspection can be configured in the same way.
 @mcp:StreamableHttpServiceConfig {
     info: {name: "Payroll MCP Server", version: "1.0.0"},
     httpConfig: {
         auth: [
             {
-                fileUserStoreConfig: {},
+                jwtValidatorConfig: {
+                    issuer: "wso2",
+                    audience: "ballerina",
+                    signatureConfig: {
+                        certFile: "../resource/path/to/public.crt"
+                    },
+                    scopeKey: "scp"
+                },
                 scopes: ["admin"]
             }
         ]

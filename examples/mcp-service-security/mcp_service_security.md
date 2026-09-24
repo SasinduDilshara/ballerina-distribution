@@ -1,20 +1,16 @@
 # Model Context Protocol (MCP) service security
 
-MCP servers that expose tools to AI agents often need to be secured, so that only authenticated and authorized clients can discover and call the tools. Since the MCP Streamable HTTP transport is built on HTTP, an MCP service can be secured with the same mechanisms as an `http:Service`: TLS on the listener via the `secureSocket` configuration, and authentication and authorization via the `auth` field of the `httpConfig` configuration in the `@mcp:StreamableHttpServiceConfig` annotation. Basic authentication (file or LDAP user store), JWT, and OAuth2 are supported.
+MCP servers that expose tools to AI agents often need to be secured, so that only authenticated and authorized clients can discover and call the tools. Since the MCP Streamable HTTP transport is built on HTTP, an MCP service is secured like an `http:Service`: TLS on the listener via the `secureSocket` configuration, and authentication and authorization via the `auth` field of the `httpConfig` configuration in the `@mcp:StreamableHttpServiceConfig` annotation. JWT, OAuth2 introspection, and basic authentication with a file or LDAP user store are supported.
 
-This example demonstrates an MCP server secured with TLS and basic authentication using the file user store, with scope-based authorization. Requests without valid credentials or without the required scope are rejected before the tool is invoked.
+This example demonstrates an MCP server secured with TLS and JWT authentication. The JWT sent in the `Authorization` header is validated against the configured issuer, audience, and signature, and the scopes in the `scp` claim are used for authorization. Requests without a valid JWT, or with a JWT that lacks the required scope, are rejected before the tool is invoked.
 
 ::: code mcp_service_security.bal :::
-
->**Info:** As a prerequisite to running the service, populate the `Config.toml` file correctly with the user information as shown below.
-
-::: code Config.toml :::
 
 Run the service by executing the command below.
 
 ::: out mcp_service_security.server.out :::
 
-Invoke the service using the cURL commands below. The first request uses a user with the `admin` scope, the second uses a user without it, and the third sends no credentials.
+Invoke the service using the cURL commands below. The first request carries a JWT with the `admin` scope, the second a JWT with the `developer` scope only, and the third no JWT.
 
 ::: out mcp_service_security.client.out :::
 
@@ -23,4 +19,4 @@ Invoke the service using the cURL commands below. The first request uses a user 
 - [The MCP service example](/learn/by-example/mcp-service/)
 - [The MCP tools with HTTP request binding example](/learn/by-example/mcp-service-http-request-binding/)
 - [`http:ListenerAuthConfig` type - API documentation](https://lib.ballerina.io/ballerina/http/latest#ListenerAuthConfig)
-- [`auth` module - API documentation](https://lib.ballerina.io/ballerina/auth/latest/)
+- [`jwt` module - API documentation](https://lib.ballerina.io/ballerina/jwt/latest/)

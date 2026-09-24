@@ -1,0 +1,6 @@
+$ bal run ai_agent_tool_context.bal
+You have two orders:
+- **ORD-1001**: Status is **delivered**
+- **ORD-1003**: Status is **processing**
+
+You have one order (ORD-1002) that is currently in transit.

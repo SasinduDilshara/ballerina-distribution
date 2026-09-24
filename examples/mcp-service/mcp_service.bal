@@ -29,7 +29,7 @@ type WeatherForecast record {|
 // Define an MCP service attached to the MCP Streamable HTTP listener on port 9090.
 listener mcp:StreamableHttpListener mcpListener = new (9090);
 
-service mcp:Service /mcp on mcpListener {
+service mcp:StreamableHttpService /mcp on mcpListener {
 
     // The remote methods defined in this service become MCP tools.
     // The MCP listener handles listing and calling the tools on MCP requests.

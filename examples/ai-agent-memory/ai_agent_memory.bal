@@ -1,11 +1,9 @@
 import ballerina/ai;
 import ballerina/io;
 
-// Agents use memory to keep the conversation history of each session, so that follow-up
-// questions can refer to earlier messages. By default, an agent uses in-memory short-term
-// memory with a fixed capacity. Configure the memory explicitly to control the capacity
-// (the number of recent user, assistant, and tool messages retained per session; the system
-// message is kept separately), the store, or the overflow handling.
+// By default, an agent uses in-memory short-term memory with a fixed capacity. Configure the
+// memory explicitly to control the capacity (messages retained per session), the store, or
+// the overflow handling.
 final ai:Memory memory = check new ai:ShortTermMemory(check new ai:InMemoryShortTermMemoryStore(20));
 
 final ai:Agent travelAgent = check new ({
@@ -14,7 +12,6 @@ final ai:Agent travelAgent = check new ({
         instructions: string `You help users plan trips. Remember the details the user
             shares and use them in later answers. Keep answers to two sentences.`
     },
-    // Use the default model provider (with configuration added via a Ballerina VS Code command).
     model: check ai:getDefaultModelProvider(),
     memory
 });
@@ -35,8 +32,17 @@ public function main() returns error? {
     response = check travelAgent.run("Where am I planning to travel?", "user-2");
     io:println(response);
 
-    // The stored messages can be retrieved or deleted using the memory instance.
+    // The stored messages can be retrieved using the memory instance. After two turns, the memory of
+    // the first session holds 5 messages: the system message, 2 user messages, and 2 assistant messages.
     ai:ChatMessage[] messages = check memory.get(sessionId);
-    io:println("\nMessages stored for session 'user-1': ", messages.length());
+    io:println("\nMessages stored for session 'user-1': ", messages.length(),
+            " ", messages.map(message => message.role.toString()));
+
+    // Deleting a session clears only that session; other sessions are not affected.
     check memory.delete(sessionId);
+    messages = check memory.get(sessionId);
+    io:println("Messages stored for session 'user-1' after deletion: ", messages.length());
+    messages = check memory.get("user-2");
+    io:println("Messages stored for session 'user-2': ", messages.length(),
+            " ", messages.map(message => message.role.toString()));
 }

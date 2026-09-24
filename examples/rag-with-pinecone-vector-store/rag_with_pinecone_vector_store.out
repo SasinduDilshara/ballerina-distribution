@@ -1,0 +1,19 @@
+$ bal run rag_with_pinecone_vector_store.bal
+Ingestion successful
+Match: # Leave policy
+
+## Annual leave
+
+Full-time employees are entitled to 20 days of paid annual leave per year.
+
+## Sick leave
+
+Employees are entitled to 10 days of paid sick leave per year.
+ (score: 0.464810252)
+Match:
+
+## Parental leave
+
+Parental leave is 12 weeks and must be requested one month in advance. (score: 0.393247932)
+
+Answer: You are entitled to 20 days of paid annual leave per year.

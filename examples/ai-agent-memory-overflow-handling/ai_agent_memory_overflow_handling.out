@@ -1,14 +1,10 @@
 $ bal run ai_agent_memory_overflow_handling.bal
---- Trimming on overflow ---
-Agent: Nice to meet you, Nadia! How can I assist you today?
-Agent: Milo sounds adorable! What breed is he?
-Agent: That sounds fascinating, Nadia! What aspect of marine biology do you specialize in?
-Agent: I know that your name is Nadia, you live in Lisbon, have a cat named Milo, and work as a marine biologist.
-Messages retained: 7 (roles: ["system","user","assistant","user","assistant","user","assistant"])
+Nice to meet you, Nadia! How can I assist you today?
+That's lovely, Nadia! How is Milo doing?
+That's fascinating, Nadia! What aspect of marine biology do you specialize in?
 
---- Summarizing on overflow ---
-Agent: Nice to meet you, Nadia! How can I assist you today?
-Agent: Milo sounds adorable! What do you love most about him?
-Agent: That’s fascinating, Nadia! What area of marine biology are you most passionate about?
-Agent: I know that your name is Nadia, you live in Lisbon, you have a cat named Milo, and you work as a marine biologist.
-Messages retained: 4 (roles: ["system","assistant","user","assistant"])
+Messages in memory: 7 ["system","user","assistant","user","assistant","user","assistant"]
+I know that your name is Nadia, you live in Lisbon, you have a cat named Milo, and you work as a marine biologist.
+
+Messages in memory: 4 ["system","assistant","user","assistant"]
+Summary: Nadia, who lives in Lisbon, introduced herself and mentioned that she has a cat named Milo. She also stated that she works as a marine biologist. The assistant responded positively to her introductions and inquired about Milo's well-being and her specialization within marine biology.

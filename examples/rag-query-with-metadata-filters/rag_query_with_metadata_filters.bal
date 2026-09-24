@@ -7,8 +7,11 @@ final ai:EmbeddingProvider embeddingProvider = check ai:getDefaultEmbeddingProvi
 
 // Create a knowledge base with the in-memory vector store.
 // Metadata filtering is also supported by the external vector store implementations.
+// The chunker argument is optional and defaults to `ai:AUTO`, which selects a chunker based
+// on the type of each ingested document or chunk. Pass a specific `ai:Chunker` for finer
+// control, or `ai:DISABLE` to store each input as a single chunk.
 final ai:KnowledgeBase knowledgeBase =
-        new ai:VectorKnowledgeBase(check new ai:InMemoryVectorStore(), embeddingProvider);
+        new ai:VectorKnowledgeBase(check new ai:InMemoryVectorStore(), embeddingProvider, ai:AUTO);
 
 public function main() returns error? {
     // Ingest chunks with custom metadata. In addition to the predefined fields
@@ -28,13 +31,13 @@ public function main() returns error? {
     string query = "How many days of leave do employees get?";
 
     // Retrieve without filters: results are ranked by vector similarity only.
-    ai:QueryMatch[] matches = check knowledgeBase.retrieve(query, 2);
+    ai:QueryMatch[] matches = check knowledgeBase.retrieve(query, 4);
     io:println("Without filters:");
     printMatches(matches);
 
     // Retrieve with a metadata filter to restrict the search to a specific department.
     // The default operator is `ai:EQUAL`.
-    matches = check knowledgeBase.retrieve(query, 2, {
+    matches = check knowledgeBase.retrieve(query, 4, {
         filters: [{key: "department", value: "HR"}]
     });
     io:println("\nFiltered by department == HR:");
@@ -42,7 +45,7 @@ public function main() returns error? {
 
     // Combine multiple filters with `ai:AND`/`ai:OR` conditions and use comparison
     // operators such as `ai:GREATER_THAN_OR_EQUAL` or `ai:IN`.
-    matches = check knowledgeBase.retrieve(query, 2, {
+    matches = check knowledgeBase.retrieve(query, 4, {
         condition: ai:AND,
         filters: [
             {key: "department", operator: ai:IN, value: ["HR", "Finance"]},
@@ -54,7 +57,7 @@ public function main() returns error? {
 
     // Metadata filters can also be used to delete chunks from the knowledge base.
     check knowledgeBase.deleteByFilter({filters: [{key: "year", operator: ai:LESS_THAN, value: 2025}]});
-    matches = check knowledgeBase.retrieve(query, 3, {filters: [{key: "department", value: "HR"}]});
+    matches = check knowledgeBase.retrieve(query, 4, {filters: [{key: "department", value: "HR"}]});
     io:println("\nHR chunks after deleting chunks from before 2025:");
     printMatches(matches);
 }

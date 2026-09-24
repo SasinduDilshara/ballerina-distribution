@@ -1,11 +1,7 @@
 import ballerina/ai;
 import ballerina/io;
 
-// Documents of different types. The `mimeType` metadata identifies the type of each document.
-final ai:TextDocument[] documents = [
-    {
-        metadata: {fileName: "leave_policy.md", mimeType: "text/markdown"},
-        content: string `# Leave policy
+final string markdownContent = string `# Leave policy
 
 ## Annual leave
 
@@ -13,21 +9,22 @@ Full-time employees are entitled to 20 days of paid annual leave per year.
 
 ## Sick leave
 
-Employees are entitled to 10 days of paid sick leave per year.`
-    },
-    {
-        metadata: {fileName: "travel_policy.html", mimeType: "text/html"},
-        content: string `<h1>Travel policy</h1>
+Employees are entitled to 10 days of paid sick leave per year.`;
+
+final string htmlContent = string `<h1>Travel policy</h1>
 <h2>Booking</h2>
 <p>Business travel must be booked two weeks in advance.</p>
 <h2>Expenses</h2>
-<p>Meals are reimbursed up to 60 USD per day.</p>`
-    },
-    {
-        metadata: {fileName: "code_of_conduct.txt", mimeType: "text/plain"},
-        content: string `Treat colleagues, customers, and partners with respect.
-Harassment is not tolerated. Report any concerns to the HR team.`
-    }
+<p>Meals are reimbursed up to 60 USD per day.</p>`;
+
+final string textContent = string `Treat colleagues, customers, and partners with respect.
+Harassment is not tolerated. Report any concerns to the HR team.`;
+
+// Documents of different types. The `mimeType` metadata identifies the type of each document.
+final ai:TextDocument[] documents = [
+    {metadata: {fileName: "leave_policy.md", mimeType: "text/markdown"}, content: markdownContent},
+    {metadata: {fileName: "travel_policy.html", mimeType: "text/html"}, content: htmlContent},
+    {metadata: {fileName: "code_of_conduct.txt", mimeType: "text/plain"}, content: textContent}
 ];
 
 // Select a chunker based on the MIME type of the document. Each chunker uses the

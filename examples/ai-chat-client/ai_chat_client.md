@@ -16,4 +16,4 @@ For more information on the underlying module, see the [`ballerina/ai` module](h
 
 ## Related links
 - [The Chat agents example](/learn/by-example/chat-agents/)
-- [The Agent with memory example](/learn/by-example/ai-agent-memory/)
+- [The Agent with in-memory short-term memory example](/learn/by-example/ai-agent-memory/)

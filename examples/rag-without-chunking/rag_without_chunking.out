@@ -1,0 +1,3 @@
+$ bal run rag_without_chunking.bal
+Ingestion successful
+Match: Q: Do I need a medical certificate for sick leave? A: Only for absences longer than two days. (score: 0.5007745924352619)

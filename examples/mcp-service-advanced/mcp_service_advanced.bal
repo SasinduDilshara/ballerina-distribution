@@ -29,8 +29,8 @@ type WeatherForecast record {|
 // Define an MCP service attached to the MCP Streamable HTTP listener on port 9090.
 listener mcp:StreamableHttpListener mcpListener = new (9090);
 
-// Note how the service is declared with the `mcp:AdvancedService` type.
-service mcp:AdvancedService /mcp on mcpListener {
+// Note how the service is declared with the `mcp:StreamableHttpAdvancedService` type.
+service mcp:StreamableHttpAdvancedService /mcp on mcpListener {
 
     isolated remote function onListTools() returns mcp:ListToolsResult|mcp:ServerError => {
         tools: [

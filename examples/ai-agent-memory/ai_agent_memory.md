@@ -1,8 +1,8 @@
-# Agent with memory
+# Agent with in-memory short-term memory
 
 AI agents use memory to keep the conversation history of each session, so that the LLM can use the earlier context when answering follow-up questions. Memory is keyed by a session ID, which allows a single agent to serve many users or conversations concurrently while keeping their histories separate.
 
-By default, an agent is configured with in-memory short-term memory (`ai:ShortTermMemory` with an `ai:InMemoryShortTermMemoryStore`) that retains a fixed number of recent messages per session. You can configure the memory explicitly to change the capacity, use a persistent store (e.g., PostgreSQL, Redis, or SQLite via the `ballerinax/ai.memory.*` and `ballerinax/ai.sqlite` modules), or customize how overflow is handled. To create a stateless agent, set the `memory` field to `()`.
+By default, an agent is configured with in-memory short-term memory (`ai:ShortTermMemory` with an `ai:InMemoryShortTermMemoryStore`) that retains a fixed number of recent messages per session. You can configure the memory explicitly to change the capacity, use a persistent store (e.g., PostgreSQL, Redis, SQLite, Microsoft SQL Server, or Amazon DynamoDB), or customize how overflow is handled. To create a stateless agent, set the `memory` field to `()`.
 
 This example demonstrates how conversation history is retained per session and how to inspect and clear the stored messages.
 
@@ -22,3 +22,4 @@ For more information on the underlying module, see the [`ballerina/ai` module](h
 - [The `ballerinax/ai.memory.redis` module](https://central.ballerina.io/ballerinax/ai.memory.redis/latest)
 - [The `ballerinax/ai.memory.mssql` module](https://central.ballerina.io/ballerinax/ai.memory.mssql/latest)
 - [The `ballerinax/ai.sqlite` module](https://central.ballerina.io/ballerinax/ai.sqlite/latest)
+- [The `ballerinax/ai.aws.dynamodb` module](https://central.ballerina.io/ballerinax/ai.aws.dynamodb/latest)

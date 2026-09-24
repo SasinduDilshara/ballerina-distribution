@@ -5838,6 +5838,24 @@
         "needCentral": true
       },
       {
+        "name": "Agentic RAG with Pinecone vector store",
+        "url": "agentic-rag-with-pinecone-vector-store",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and a Pinecone index",
+        "disablePlayground": true,
+        "needCentral": true
+      },
+      {
+        "name": "Agentic RAG with WSO2 Integration knowledge base",
+        "url": "agentic-rag-with-wso2-integration-knowledge-base",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires a WSO2 Integration knowledge base and keys",
+        "disablePlayground": true,
+        "needCentral": true
+      },
+      {
         "name": "Document loading",
         "url": "rag-document-loading",
         "verifyBuild": true,
@@ -5851,6 +5869,33 @@
         "url": "rag-document-chunking",
         "verifyBuild": true,
         "verifyOutput": true,
+        "disablePlayground": true,
+        "needCentral": false
+      },
+      {
+        "name": "RAG with a custom chunker",
+        "url": "rag-with-custom-chunker",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the output is not fixed",
+        "disablePlayground": true,
+        "needCentral": false
+      },
+      {
+        "name": "RAG without chunking",
+        "url": "rag-without-chunking",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the output is not fixed",
+        "disablePlayground": true,
+        "needCentral": false
+      },
+      {
+        "name": "Embeddings",
+        "url": "rag-embeddings",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the output is not fixed",
         "disablePlayground": true,
         "needCentral": false
       },
@@ -5869,6 +5914,42 @@
         "verifyBuild": true,
         "verifyOutput": false,
         "disableVerificationReason": "Requires keys and a PostgreSQL database",
+        "disablePlayground": true,
+        "needCentral": true
+      },
+      {
+        "name": "RAG with Pinecone vector store",
+        "url": "rag-with-pinecone-vector-store",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and a Pinecone index",
+        "disablePlayground": true,
+        "needCentral": true
+      },
+      {
+        "name": "RAG with Azure AI Search knowledge base",
+        "url": "rag-with-azure-ai-search-knowledge-base",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and an Azure AI Search service",
+        "disablePlayground": true,
+        "needCentral": true
+      },
+      {
+        "name": "RAG with Google Vertex AI",
+        "url": "rag-with-vertex-ai",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires Google Cloud credentials and the output is not fixed",
+        "disablePlayground": true,
+        "needCentral": true
+      },
+      {
+        "name": "RAG with OpenRouter",
+        "url": "rag-with-openrouter",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the output is not fixed",
         "disablePlayground": true,
         "needCentral": true
       },
@@ -5912,20 +5993,20 @@
         "disablePlayground": true
       },
       {
+        "name": "MCP service with request metadata",
+        "url": "mcp-service-with-request-metadata",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Long-running service",
+        "disablePlayground": true,
+        "needCentral": false
+      },
+      {
         "name": "MCP client",
         "url": "mcp-client",
         "verifyBuild": true,
         "verifyOutput": false,
         "disableVerificationReason": "Requires the MCP service to be running",
-        "disablePlayground": true,
-        "needCentral": false
-      },
-      {
-        "name": "MCP service with sessions",
-        "url": "mcp-service-with-sessions",
-        "verifyBuild": true,
-        "verifyOutput": false,
-        "disableVerificationReason": "Long-running service",
         "disablePlayground": true,
         "needCentral": false
       },
@@ -5964,11 +6045,29 @@
         "needCentral": false
       },
       {
+        "name": "Passing context to agent tools",
+        "url": "ai-agent-tool-context",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the output is not fixed",
+        "disablePlayground": true,
+        "needCentral": false
+      },
+      {
         "name": "Agent with MCP integration",
         "url": "ai-agent-mcp-integration",
         "verifyBuild": true,
         "verifyOutput": false,
         "disableVerificationReason": "Requires keys and the output is not fixed",
+        "disablePlayground": true,
+        "needCentral": false
+      },
+      {
+        "name": "Passing context to MCP tools",
+        "url": "ai-agent-mcp-context",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the MCP service to be running",
         "disablePlayground": true,
         "needCentral": false
       },
@@ -6000,7 +6099,7 @@
         "needCentral": false
       },
       {
-        "name": "Agent with memory",
+        "name": "Agent with in-memory short-term memory",
         "url": "ai-agent-memory",
         "verifyBuild": true,
         "verifyOutput": false,
@@ -6032,6 +6131,15 @@
         "verifyBuild": true,
         "verifyOutput": false,
         "disableVerificationReason": "Requires keys and user input",
+        "disablePlayground": true,
+        "needCentral": false
+      },
+      {
+        "name": "Agent ID",
+        "url": "ai-agent-id",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires an agent identity registered with an authorization server",
         "disablePlayground": true,
         "needCentral": false
       },
@@ -6079,6 +6187,15 @@
         "disableVerificationReason": "Test file; has different naming convention and requires keys",
         "disablePlayground": true,
         "needCentral": true
+      },
+      {
+        "name": "Agent from an AFM definition",
+        "url": "ai-agent-from-afm",
+        "verifyBuild": true,
+        "verifyOutput": false,
+        "disableVerificationReason": "Requires keys and the output is not fixed",
+        "disablePlayground": true,
+        "needCentral": false
       }
     ]
   },
